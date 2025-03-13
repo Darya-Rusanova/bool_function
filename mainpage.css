@@ -27,8 +27,10 @@
     margin: 40px;
     padding: 30px;
     border: 35px solid #6C32BF;
+    margin: 0 auto;
 
 }
+
 .games {
     background-color: #6C32BF;
     grid-area:games;
