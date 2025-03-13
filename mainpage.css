@@ -1,0 +1,80 @@
+
+.container{
+    background: linear-gradient(to bottom right, #8338EC, #FB5607, #FFBE0B);
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 800px;
+    grid-template-areas:
+       "head"
+       "body"
+}
+.header{
+    
+    grid-area:head;
+}
+.body {
+    grid-area:body;
+    display:grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+       "info games"
+}
+.info{
+    grid-area:info;
+    background-color: white;
+    border-radius: 60px 60px;
+    margin: 40px;
+    padding: 30px;
+    border: 35px solid #6C32BF;
+
+}
+.games {
+    background-color: #6C32BF;
+    grid-area:games;
+    border-radius: 55px 55px;
+    margin: 40px;
+    padding-right: 30px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-template-areas:
+       "first second third"
+
+}
+
+.games::-webkit-scrollbar {
+    width: 15px;
+}
+  
+.games::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: #8338EC;
+}
+.games::-webkit-scrollbar-button:increment:increment {
+    height: 10%;
+    display: block;
+    background: transparent;
+}
+  
+.games > *{
+    margin:0 auto;
+}
+.first-col{
+    grid-area:first;
+}
+.second-col{
+    grid-area:second;
+}
+.third-col{
+    grid-area:third;
+}
+.game{
+    border-radius: 40px 40px;
+    background-color: white;
+    height: 210px;
+    width: 240px;
+    margin: 10%;
+    margin-bottom: 20px;
+}
