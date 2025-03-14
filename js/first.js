@@ -1,4 +1,3 @@
-import {bFunc} from '../js/class.js'
 (function () {
     window.addEventListener('load', init);
 
@@ -7,10 +6,14 @@ import {bFunc} from '../js/class.js'
     }
 
     function click() {
-        let n = document.getElementById("in").value;
-        let o = document.getElementById("out");
-        let f = new bFunc(n)
-        o.innerText = f.show();
+        var n = document.getElementById("in").value;
+        var o = document.getElementById("out");
+        var c = ""
+        for (var i=0;i<Math.pow(2,n);i++)
+        {
+            c+= Math.round(Math.random());
+        }
+        o.innerText = c;
         return 0;
     }
 })();

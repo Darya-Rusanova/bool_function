@@ -5,6 +5,10 @@ export class bFunc {
         this.n = n;
         this.func = randomFunk(n);
     }
+    constructor() {
+        this.n = n;
+        this.func = randomFunk(n);
+    }
     show(){
         return `f(${this.n}) = ${this.func}`;
     }
