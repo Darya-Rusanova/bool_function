@@ -1,0 +1,139 @@
+html{
+    background: linear-gradient(to bottom right, #8338EC, #FB5607, #FFBE0B);
+}
+.container{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+       "head"
+       "body"
+}
+
+.header{
+    grid-area: head;
+    padding: 20px;
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+       "bt icon info"
+}
+.button{
+    margin: 20px;
+    grid-area: bt; 
+    width: 70%;
+}
+button{
+    padding: 15px;
+    font-size:xx-large;
+    color: white;
+    border-radius: 60px 60px;
+    background-color: #6C32BF;
+    border: none; 
+    cursor: pointer;
+}
+
+.icon{
+    grid-area: icon;
+}
+.info{
+    grid-area: info;
+}
+.body{
+    padding: 30px;
+    grid-area: body;
+    margin-top: 30px;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto 10% ;
+    grid-template-areas:
+       "ex ex"
+       "func func"
+       "out out"
+       "retry check"
+}
+.exercise{
+    grid-area: ex;
+    background-color: white;
+    border-radius: 35px 35px;
+    margin: 40px;
+    padding: 10px;
+    border: 15px solid #6C32BF;
+    font-size:x-large;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.function{
+    grid-area: func;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 60px 60px;
+    border:none;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.output {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 50%;
+    grid-area: out;
+    border-radius: 30px 30px;
+    padding: 5px;
+    background-color: #6C32BF;
+    display:grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: auto;
+    grid-template-areas:
+       "first second"
+}
+.first-col{
+    grid-area: first;
+}
+.second-col{
+    grid-area: second;
+}
+.check{
+    grid-area: check;
+    margin-left: 20%;
+}
+.retry{
+    width: 500px;
+    grid-area: retry;
+    margin-left: 50%;
+}
+
+.argument{
+    background-color: white;
+    color: black;
+    font-size:xx-large;
+    border-radius: 15px 15px;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    text-align: center;
+    padding: 5px;
+}
+.argument>p{
+    padding-top: 10px;
+}
+select{
+    border:#50248c;
+    background-color: white;
+    color: black;
+    font-size: x-large;
+    border-radius: 15px 15px;
+    width: 95%;
+    height: 70px;
+    margin: 10px;
+    text-align: center;
+    padding: 5px;
+}

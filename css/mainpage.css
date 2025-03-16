@@ -33,13 +33,13 @@ html{
 .games {
     background-color: #6C32BF;
     grid-area:games;
-    border-radius: 55px 55px;
+    border-radius: 45px 45px;
     margin: 40px;
     padding-right: 30px;
     overflow-y: scroll;
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 70%;
+    grid-template-rows: 50%;
     grid-template-areas:
        "first second third"
 
