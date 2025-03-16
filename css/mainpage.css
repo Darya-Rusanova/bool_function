@@ -16,7 +16,7 @@ html{
 .body {
     grid-area:body;
     display:grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 40% 55%;
     grid-template-rows: auto;
     grid-template-areas:
        "info games"
@@ -74,14 +74,14 @@ html{
 .game{
     border-radius: 40px 40px;
     background-color: white;
-    height: 210px;
-    width: 240px;
+    height: 180px;
+    width: 220px;
     margin: 10%;
     margin-bottom: 20px;
 }
 .picture{
-    height: 170px;
-    width: 170px;
+    height: 150px;
+    width: 150px;
     margin-top: 20px;
     margin-left: 35px;
 }
