@@ -1,5 +1,6 @@
 html{
     background: linear-gradient(to bottom right, #8338EC, #FB5607, #FFBE0B);
+    height: 100%;
 }
 .container{
     display:grid;
@@ -89,6 +90,7 @@ input{
     border: 15px solid #6C32BF;
     margin-bottom: 50px;
 }
+
 .result>button{
     width: 300px;
     margin-top: 20px;
