@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/ex11.css" type="text/css" rel="stylesheet" media="screen">
+    <title>Six Exercise</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="button">
+                <a href="../index.html">
+                    <img src="../image/exit.png" alt="exit" width="80px" height="80px"/>
+                </a>
+            </div>
+       
+            <div class="icon"></div>
+            <div class="info">
+                <img src="../image/question.png" alt="info" width="80px" height="80px"/>
+            </div>
+        </div>
+        <div class="body">
+            <div class="exercise">
+                <p> Определите полным или нет является набор функций. Если система б.ф. неполна, то выберите замкнутый класс, которому набор функций принадлежит.</p>
+            </div>
+            <div class="functions">
+                <div class="first-col">
+                    <p>First function</p>   
+                    <p>Second function</p>
+                </div>
+                <div class="second-col">
+                    <p>Third function</p>
+                    <p>Fourth function</p>
+                </div>
+                <img src="../image/retry.png" alt="retry" width="60px" height="60px" id="generate"/>
+            </div>  
+            <div class="answer">
+                <div>
+                    <input type="radio" id="complete" class="radio-bt" name="drone" value="complete" checked />
+                    <label for="complete">Полное</label>
+                </div>
+                <div>
+                    <input type="radio" id="incomplete" class="radio-bt" name="drone" value="incomplete" />
+                    <label for="incomplete">Неполное</label>
+                </div>
+            </div>
+            <div class="class">
+                    <legend>Выберите классы, которым принадлежит неполное множество:</legend>
+                  
+                    <div>
+                      <input type="checkbox" id="t0" class="checkbox-input" name="t0"/>
+                      <label for="t0">Cохраняющие константу 0</label>
+                    </div>
+                  
+                    <div>
+                      <input type="checkbox" id="t1" class="checkbox-input" name="t1" />
+                      <label for="t1">Сохраняющие константу 1</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="l" class="checkbox-input" name="l" />
+                        <label for="l">Линейные функции</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="s" class="checkbox-input" name="s" />
+                        <label for="s">Самодвойственные функции</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="m" class="checkbox-input" name="m" />
+                        <label for="m">Монотонные функции</label>
+                    </div>
+            </div>
+            <div class="retry">
+                <button id="retry">ПОПРОБОВАТЬ СНОВА</button>
+            </div>
+            <div class="check">
+                <button id="check">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
