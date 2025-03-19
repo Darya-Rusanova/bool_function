@@ -1,5 +1,6 @@
 html{
     background: linear-gradient(to bottom right, #8338EC, #FB5607, #FFBE0B);
+    background-attachment: fixed;
     height: 100%;
 }
 .container{
@@ -39,7 +40,9 @@ button{
     grid-area: icon;
 }
 .info{
+    margin: 20px;
     grid-area: info;
+    text-align: right;
 }
 .body{
     padding: 30px;
@@ -50,9 +53,23 @@ button{
     grid-template-rows: auto auto auto 10% ;
     grid-template-areas:
        "ex ex"
-       "func func"
+       "block block"
        "in in"
        "retry check"
+}
+.block{
+    grid-area: block;
+    display:grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto ;
+    grid-template-areas:
+       "func gen"
+}
+#generate{
+    margin-top: 30px;
+    margin-right: 500px;
+    text-align: left;
+    grid-area: gen;
 }
 .exercise{
     grid-area: ex;
@@ -78,7 +95,7 @@ button{
     padding: 10px;
     text-align: center;
     width: 500px;
-    margin: 0 auto;
+    margin-left: 40%;
 }
 input{
     color: rgb(0, 0, 0);

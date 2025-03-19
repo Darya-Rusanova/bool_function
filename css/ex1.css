@@ -1,5 +1,6 @@
 html{
     background: linear-gradient(to bottom right, #8338EC, #FB5607, #FFBE0B);
+    background-attachment: fixed;
     height: 100%;
 }
 .container{
@@ -41,7 +42,6 @@ p{
 .button{
     margin: 20px;
     grid-area: bt; 
-    width: 70%;
 }
 button{
     padding: 15px;
@@ -57,6 +57,8 @@ button{
 }
 .info{
     grid-area: info;
+    text-align: right;
+    margin: 20px;
 }
 input{
     color: rgb(0, 0, 0);

@@ -1,0 +1,171 @@
+html{
+    background: linear-gradient(to bottom right, #8338EC, #FB5607, #FFBE0B);
+    background-attachment: fixed;
+    height: 100%;
+}
+.container{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+       "head"
+       "body"
+}
+
+.header{
+    grid-area: head;
+    padding: 20px;
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+       "bt icon info"
+}
+.button{
+    margin: 20px;
+    grid-area: bt; 
+}
+button{
+    padding: 15px;
+    font-size:xx-large;
+    color: white;
+    border-radius: 60px 60px;
+    background-color: #6C32BF;
+    border: none; 
+    cursor: pointer;
+}
+#generate{
+    margin-top: 30px;
+    grid-area: gen;
+}
+.icon{
+    grid-area: icon;
+}
+.info{
+    text-align: right;
+    margin: 20px;
+    grid-area: info;
+}
+.body{
+    padding: 30px;
+    grid-area: body;
+    margin-top: 30px;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto auto 10% ;
+    grid-template-areas:
+       "ex ex"
+       "func func"
+       "ans ans"
+       "class class"
+       "retry check"
+}
+.first-col{
+    grid-area: first;
+}
+.second-col{
+    grid-area: second;
+}
+.answer{ 
+    grid-area: ans;
+    margin: 0 auto;
+    border: 5px solid #6C32BF;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 30px 30px;
+    font-size: x-large;
+    padding: 10px;
+    height: 50px;
+    width: 30%;
+    margin-bottom: 40px;
+}
+.answer>*{
+    margin: 40px;
+    display: inline;
+    text-align: center;
+}
+.radio-bt:checked{
+    accent-color: #6C32BF;
+}
+.radio-bt{
+    width: 20px;
+    height: 20px;
+}
+.class{
+    grid-area: class;
+    margin: 0 auto;
+    border: 5px solid #6C32BF;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 30px 30px;
+    font-size: x-large;
+    padding: 10px;
+    width: 50%;
+}
+.class>*{
+    padding: 7px;
+}
+.exercise{
+    grid-area: ex;
+    background-color: white;
+    border-radius: 35px 35px;
+    margin: 40px;
+    padding: 10px;
+    border: 15px solid #6C32BF;
+    font-size:x-large;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.functions{
+    grid-area: func; 
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: 45% 45% 10%;
+    grid-template-rows: auto auto auto 10% ;
+    grid-template-areas:
+       "first second gen"
+}
+.first-col > p,.second-col>p{
+    margin: 40px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 60px 60px;
+    border:none;
+    font-size: x-large;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+
+.checkbox-input {
+    appearance: none;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #6C32BF;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin: 0;
+}
+
+.checkbox-input:checked{
+    background-color: #6C32BF;
+    border-color: #6C32BF;
+    background-image: url("../image/check.png");
+}
+.check{
+    margin-top: 30px;
+    grid-area: check;
+    margin-left: 20%;
+}
+.retry{
+    margin-top: 30px;
+    width: 500px;
+    grid-area: retry;
+    margin-left: 50%;
+}
