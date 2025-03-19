@@ -4,19 +4,22 @@
     function init() {
         // document.getElementById("res").addEventListener("click", click);
         document.addEventListener("keyup", enterUp);
-        generateFunction();
+        generate();
     }
     function enterUp(event) {
         if (event.code == "Enter") click();
       }
 
-    function generateFunction(){
+    function generateVector(){
         var vector = "";
         for(let i=0;i<4;i++) vector+= Math.round(Math.random());
-        document.getElementById("vector").innerText = vector;
-      }
+        return vector;
+    }
+    function generate(){
+        var vector = "";
+        for(let i=0;i<4;i++) vector+= Math.round(Math.random());
+        document.getElementById("vector").innerText = generateVector();
 
-    function click() {
         var names = {"0001":"конъюнкция",
             "0111":"дизъюнкция",
             "0110":"сложение по модулю 2",
@@ -34,11 +37,22 @@
             "0101":"второй аргумент",
             "1010":"отрицание второго аргумента"
             }
-        var correct = names[document.getElementById("vector").innerText]
-        var variants = document.querySelectorAll("variant");
-        for(let el of variants){
-            
-        }
+
+        var correct = names[vector];
+        names[vector] = "-";
+        var variants = document.querySelectorAll("#variant");
+        console.log(variants);
+        variants.forEach(el => {
+            let num = generateVector();
+            while(names[num]=="-") num = generateVector();
+            el.innerText = names[num];
+            names[num] = "-";        
+        });
+
+      }
+
+    function click() {
+        
         };
         
 
