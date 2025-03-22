@@ -35,6 +35,9 @@ html{
 p{
     margin: 10px;
 }
+#out{
+    margin: 10px;
+}
 .body{
     grid-area: body;
     margin-top: 50px;
@@ -97,4 +100,9 @@ input{
     width: 300px;
     margin-top: 20px;
     margin-bottom: 50px;
+}
+
+.over{
+    text-decoration: overline;
+    display:inline-block;
 }
