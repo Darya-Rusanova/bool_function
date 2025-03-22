@@ -92,15 +92,15 @@ html{
     position: fixed;
     top: 50%; /* Центрируем по вертикали */
     left: 50%; /* Центрируем по горизонтали */
-    width: 170%; /* Задаем ширину больше 100% для эффекта */
-    height: 170%; /* Задаем высоту больше 100% для эффекта */
+    width: 250%; /* Задаем ширину больше 100% для эффекта */
+    height: 250%; /* Задаем высоту больше 100% для эффекта */
     transform: translate(-50%, -50%); /* Центрируем изображение */
     background-image: url(../image/IMG_1966.PNG); /* Замените на URL вашей картинки */
     background-size: cover; /* Заполнение фона */
     background-position: center;
     animation: rotate 200s linear infinite; /* Анимация вращения */
     z-index: -1; /* Помещаем фон под контент */
-    opacity: 0.3;
+    opacity: 0.1;
 }
 
 @keyframes rotate {
