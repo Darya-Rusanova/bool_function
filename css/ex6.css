@@ -49,15 +49,40 @@ button{
     grid-area: body;
     margin-top: 30px;
     display:grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 40%;
     grid-template-rows: auto auto auto 10% ;
     grid-template-areas:
        "ex ex"
        "block block"
-       "in in"
+       "in calc"
        "retry check"
 }
+.calc{
+    padding: 10px;
+    grid-area: calc;
+    border-radius: 20px 20px;
+    width: 80%;
+    padding-left: 7%;
+    padding-top: 5%;
+    height: auto;
+}
+.calc>*{
+    text-align: center;
+    margin-bottom: 5px;
+    display: inline;
+    width: 80px;
+    height: 80px;
+    color: black;
+    background-color: white;
+    border: 5px solid #6C32BF;
+    border-radius: 5px 5px;
+}
+.over{
+    text-decoration: overline;
+    display:inline-block;
+}
 .block{
+    margin-bottom: 30px;
     grid-area: block;
     display:grid;
     grid-template-columns: 70% 30%;
@@ -106,20 +131,26 @@ input{
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 1000px;
-    height: 80px;
+    width: 80%;
+    height: auto;
+    min-height: 80px;
 }
 .input{
     grid-area: in;
-    margin: 0 auto;
+    margin-left: 10%;
+    width: 100%;
 }
 .check{
+    margin-top: 30px;
     grid-area: check;
     margin-left: 20%;
+    margin-bottom: 10px;
 }
 .retry{
+    margin-top: 30px;
+    margin-bottom: 10px;
     width: 500px;
     grid-area: retry;
-    margin-left: 50%;
+    margin-left: 27%;
 }
 
