@@ -1,0 +1,7 @@
+@font-face{
+    font-family: "regular";
+    src: local("regular"), url(fonts/Nunito-Regular.ttf);
+}
+html{
+    font-family: regular;
+}
