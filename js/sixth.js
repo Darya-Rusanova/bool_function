@@ -18,7 +18,8 @@
     function typeIn(){
         let text = this.innerText;
         if(this.id=="or" || document.getElementById("input").innerText.slice(-1) == "V") text = " " + text;
-        document.getElementById("input").innerText += text;
+        if(this.id.slice(0, 3)=="not") document.getElementById("input").innerHTML += ' <div class="over">' + text + "</div> ";
+        else document.getElementById("input").innerHTML += text;
     }
     function generateVector(){
         var vector = "";
