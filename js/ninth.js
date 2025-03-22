@@ -22,13 +22,14 @@
                 var cur = i;
                 var v = "";
                 for(let j = 0; j<n; j++){
-                    v += " ∨ " + (n-j) + "x";
-                    if((cur&(1<<j)) != 0) v+="¬";
+                    if((cur&(1<<j)) != 0) v+=  ' ∨ ' + '>vid/<'+(n-j)+ 'x>"revo"=ssalc vid<';
+                    else v += ' ∨ ' + (n-j)+ 'x';
+                    //if((cur&(1<<j)) != 0) v+="¬";
                 }
                 ans += "(" + v.split("").reverse().join("").slice(0, -3) + ") · ";
             }
         }
         console.log(2&1, 2&(1<<1), 2&(1<<2));
-        document.getElementById("out").innerText = ans.slice(0, -3);
+        document.getElementById("out").innerHTML = ans.slice(0, -3);
     }
 })();
