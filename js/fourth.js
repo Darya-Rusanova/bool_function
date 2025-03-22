@@ -48,10 +48,16 @@ var round_correct_ans = [];
     }
     function chooseRounds(){
         rounds = this.innerText;
-        if(document.querySelector(".clicked")!==null){
-            document.querySelector(".clicked").classList.remove("clicked"); 
+        
+        if(document.querySelectorAll(".clicked")!==null){
+            document.querySelectorAll(".clicked").forEach(element => {
+                element.classList.remove("clicked");
+            });
         }
-        this.classList.add("clicked");
+        // this.classList.add("clicked");
+        document.querySelectorAll("#" + this.id).forEach(element => {
+            element.classList.add("clicked");
+        });
     }
     function chooseVariant(){
         if(document.querySelector(".variant.clicked")!==null){
@@ -91,6 +97,7 @@ var round_correct_ans = [];
       }
 
     function play(){
+        window.start.close();
         window.res.close();
         var nav_func = document.createElement('p');
         nav_func.classList.add("nav");
@@ -105,6 +112,8 @@ var round_correct_ans = [];
         document.querySelector(".answer").replaceChildren(nav_ans);
         document.querySelector(".right-ans").replaceChildren(nav_right_ans);
         document.getElementById("cur_round").innerText = cur_round; 
+        if(cur_round==rounds) document.getElementById("check").innerText = "РЕЗУЛЬТАТ";
+        else document.getElementById("check").innerText = "ДАЛЕЕ";
         generate();
       }
     function check() {
@@ -138,7 +147,8 @@ var round_correct_ans = [];
             document.querySelector(".right-ans").appendChild(ans_corr);
         }
 
-        cur_round = 1;  
+        cur_round = 1; 
+        correct_ans = 0; 
         round_functions = [];
         round_answers = [];
         round_correct_ans = []; 
