@@ -312,3 +312,9 @@ output>*{
 #n{
     width: 50px;
 }
+.incorrect{
+    color: rgb(163, 16, 21);
+}
+.correct{
+    color: rgb(11, 122, 11);
+}

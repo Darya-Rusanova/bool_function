@@ -9,7 +9,7 @@
         if (event.code == "Enter") click();
       }
 
-
+    
     function click() {
         return 0;
     }

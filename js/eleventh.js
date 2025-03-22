@@ -23,7 +23,7 @@
         for(let i=0;i< len; i++){
             vector+= Math.round(Math.random());
         }
-        return vector;
+        return vector.replace(/\B(?=(\d{4})+(?!\d))/g, " ");;
     }
 
     function createFunc(vector){

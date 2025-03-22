@@ -19,6 +19,6 @@
         for(let i = 0; i<zero.length; i+=n){
             s+=zero.slice(i, i+n) + one.slice(i, i+n);
         }
-        document.getElementById("out").innerText = s;
+        document.getElementById("out").innerText = s.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
     }
 })();

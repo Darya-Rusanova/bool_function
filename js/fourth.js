@@ -28,7 +28,7 @@ var round_correct_ans = [];
 
     function init() {
         window.start.showModal();
-        document.addEventListener("keyup", enterUp);
+        // document.addEventListener("keyup", enterUp);
         document.querySelectorAll(".rounds button").forEach(bt => {
             bt.addEventListener("click", chooseRounds);
         });
@@ -40,12 +40,12 @@ var round_correct_ans = [];
             v.addEventListener("click", chooseVariant);
         });
     }
-    function enterUp(event) {
-        if (event.code == "Enter"){
-            if(cur_round == rounds) result();
-            else check();
-        }
-    }
+    // function enterUp(event) {
+    //     if (event.code == "Enter"){
+    //         if(cur_round == rounds) result();
+    //         else check();
+    //     }
+    // }
     function chooseRounds(){
         rounds = this.innerText;
         
@@ -80,7 +80,7 @@ var round_correct_ans = [];
         names[vector] = "-";
         var variants = document.querySelectorAll("#variant");
         var var_names = [];
-        var correct_num = Math.round(Math.random() * 6);
+        var correct_num = Math.floor(Math.random() * 6);
         for(let i = 0; i<6; i++){
             if(i==correct_num) var_names.push(correct);
             else{
@@ -141,6 +141,8 @@ var round_correct_ans = [];
             document.querySelector(".func").appendChild(func);
             let ans = document.createElement('p');
             ans.innerText = round_answers[i];
+            if(round_answers[i]!=round_correct_ans[i]) ans.classList.add("incorrect");
+            else ans.classList.add("correct");
             document.querySelector(".answer").appendChild(ans);
             let ans_corr = document.createElement('p');
             ans_corr.innerText = round_correct_ans[i];
