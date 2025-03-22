@@ -141,6 +141,8 @@ var round_correct_ans = [];
             document.querySelector(".func").appendChild(func);
             let ans = document.createElement('p');
             ans.innerText = round_answers[i];
+            if(round_answers[i]!=round_correct_ans[i]) ans.classList.add("incorrect");
+            else ans.classList.add("correct");
             document.querySelector(".answer").appendChild(ans);
             let ans_corr = document.createElement('p');
             ans_corr.innerText = round_correct_ans[i];
