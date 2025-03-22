@@ -26,10 +26,9 @@
             for(let j=0;j<m;j++)
             {
                 ans+=vec[i+j];
-                console.log(i,j)
             }
         }
-        document.getElementById("out").innerText = ans;
+        document.getElementById("out").innerText = ans.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
         return 0;
     }
 })();

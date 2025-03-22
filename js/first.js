@@ -18,7 +18,7 @@
         {
             c+= Math.round(Math.random());
         }
-        o.innerText = c;
+        o.innerText = c.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
         return 0;
     }
 })();
