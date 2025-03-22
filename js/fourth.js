@@ -17,6 +17,8 @@ var functions = {"0001":"конъюнкция",
     };
 
 var rounds = 1;
+var cur_round = 1;
+var correct_ans = 0;
 
 (function () {
     window.addEventListener('load', init);
@@ -27,10 +29,17 @@ var rounds = 1;
         document.querySelectorAll(".rounds button").forEach(bt => {
             bt.addEventListener("click", chooseRounds);
         });
-        document.getElementById("play").addEventListener("click", generate);
+        document.getElementById("play").addEventListener("click", play);
+        document.getElementById("check").addEventListener("click", check);
+        document.querySelectorAll("#variant").forEach(bt => {
+            bt.addEventListener("click", chooseVariant);
+        });
     }
     function enterUp(event) {
-        if (event.code == "Enter") click();
+        if (event.code == "Enter"){
+            if(cur_round == rounds) result();
+            else check();
+        }
     }
     function chooseRounds(){
         rounds = this.innerText;
@@ -41,6 +50,14 @@ var rounds = 1;
         }
         this.classList.add("clicked");
     }
+    function chooseVariant(){
+        if(document.querySelectorAll(".clicked")!==null){
+            document.querySelectorAll(".clicked").forEach(element => {
+                element.classList.remove("clicked"); 
+             });
+        }
+        this.classList.add("clicked");
+    };
 
     function generateVector(){
         var vector = "";
@@ -72,10 +89,21 @@ var rounds = 1;
         });
       }
 
-    function click() {
-        var correct = names[document.getElementById("vector").innerText];
-        // if(this.innerText = )
+    function play(){
+        document.getElementById("cur_round").innerText = cur_round;
+        generate();
+      }
+    function check() {
+        var correct = functions[document.getElementById("vector").innerText];
+        if(document.querySelector("#variant.clicked ").innerText = correct) correct_ans++;
+        cur_round++;
+        if(cur_round>rounds) result();
+        else play();
         };
         
+    function result(){
+        document.getElementById("correct").innerText = correct_ans;
+        document.getElementById("rounds").innerText = rounds;
+    }
 
 })();
