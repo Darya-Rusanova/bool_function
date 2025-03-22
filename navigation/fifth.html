@@ -34,14 +34,19 @@
                 <img src="../image/retry.png" alt="retry" width="60px" height="60px" id="generate"/>
             </div>
             <div class="output">
-                <div class="first-col">
-                    <p class="argument">x1</p>
+                <div class="first">
+                    <p>Фиктивные</p>
+                    <div id="fictitious" class="area"></div>       
+                </div> 
+                
+                <div class="second">
+                   <p>Существенные</p>
+                   <div id="significant" class="area"></div>
                 </div>
-                <div class="second-col">
-                    <select id="options" name="phone">
-                        <option value="fictitious">Фиктивная</option>
-                        <option value="significant">Существенная</option>
-                    </select>
+                <div class="arguments">
+                    <p draggable="true" class="blocks">x1</p>
+                    <p draggable="true" class="blocks">x2</p>
+                    <p draggable="true" class="blocks">x3</p>
                 </div>
             </div>
             <div class="retry">
@@ -50,7 +55,9 @@
             <div class="check">
                 <button id="check">ПРОВЕРИТЬ</button>
             </div>
+            <script src="../js/script.js"></script>
         </div>
+        
     </div>
 </body>
 </html>

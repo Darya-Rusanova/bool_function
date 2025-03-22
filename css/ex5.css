@@ -99,24 +99,74 @@ button{
 
 .output {
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
-    width: 50%;
     grid-area: out;
-    border-radius: 30px 30px;
-    padding: 5px;
-    background-color: #6C32BF;
     display:grid;
-    grid-template-columns: 15% 85%;
-    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
     grid-template-areas:
-       "first second"
+       "fict sign"
+       "arg arg"
 }
-.first-col{
-    grid-area: first;
+.arguments{
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 40%;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    grid-area: arg;
 }
-.second-col{
-    grid-area: second;
+.area{
+    padding-top: 30px;
+}
+.arguments>*, .area>*{
+    cursor: move;
+    display: inline;
+    background-color: white;
+    border: 10px solid #6C32BF;
+    border-radius: 15px 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.first{
+    text-align: center;
+    font-size: 25px;
+    grid-area: fict;    
+    margin: 30px;
+    border: 10px solid #6C32BF;
+    background-color: white;    
+    border-radius: 35px 35px;
+    padding: 20px;
+}
+.first>p, .second>p{
+    margin: 7px;
+}
+.second{
+    text-align: center;
+    font-size: 25px;
+    grid-area: sign;    
+    margin: 30px; 
+    border: 10px solid #6C32BF;
+    background-color: white;    
+    border-radius: 35px 35px;
+    padding: 20px;
+}
+#fictitious{
+    width: 350px;
+    min-height: 150px;
+    height: auto;
+    border: 2px dashed #ccc;
+    border-radius: 35px 35px;
+}
+#significant{
+    width: 350px;
+    min-height: 150px;
+    height: auto;
+    border: 2px dashed #ccc;
+    border-radius: 35px 35px;
 }
 .check{
     grid-area: check;
@@ -126,31 +176,4 @@ button{
     width: 500px;
     grid-area: retry;
     margin-left: 50%;
-}
-
-.argument{
-    background-color: white;
-    color: black;
-    font-size:xx-large;
-    border-radius: 15px 15px;
-    width: 60px;
-    height: 60px;
-    margin: 10px;
-    text-align: center;
-    padding: 5px;
-}
-.argument>p{
-    padding-top: 10px;
-}
-select{
-    border:#50248c;
-    background-color: white;
-    color: black;
-    font-size: x-large;
-    border-radius: 15px 15px;
-    width: 95%;
-    height: 70px;
-    margin: 10px;
-    text-align: center;
-    padding: 5px;
 }
