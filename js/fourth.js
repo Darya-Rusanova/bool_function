@@ -16,17 +16,31 @@ var functions = {"0001":"конъюнкция",
     "1010":"отрицание второго аргумента"
     };
 
+var rounds = 1;
+
 (function () {
     window.addEventListener('load', init);
 
     function init() {
-        // document.getElementById("res").addEventListener("click", click);
+        window.start.showModal();
         document.addEventListener("keyup", enterUp);
-        generate();
+        document.querySelectorAll(".rounds button").forEach(bt => {
+            bt.addEventListener("click", chooseRounds);
+        });
+        document.getElementById("play").addEventListener("click", generate);
     }
     function enterUp(event) {
         if (event.code == "Enter") click();
-      }
+    }
+    function chooseRounds(){
+        rounds = this.innerText;
+        if(document.querySelectorAll(".clicked")!==null){
+            document.querySelectorAll(".clicked").forEach(element => {
+                element.classList.remove("clicked"); 
+             });
+        }
+        this.classList.add("clicked");
+    }
 
     function generateVector(){
         var vector = "";
