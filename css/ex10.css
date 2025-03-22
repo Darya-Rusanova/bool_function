@@ -95,15 +95,17 @@ button{
     text-align: center;
     width: 500px;
     margin-left: 40%;
+    height: 70px;
 }
 .variants{    
     grid-area: var;
     margin: 0 auto;
     display:grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
+    grid-template-rows: auto auto;
     grid-template-areas:
         "first second"
+        "center center"
 
 }
 .first-col{
@@ -119,6 +121,10 @@ button{
     margin: 30px;
     font-size: x-large;
     text-align: center;
+}
+.variants>.variant{
+    grid-area: center;
+    margin: 0 auto;
 }
 .non-checked{
     height: 60px;
@@ -140,14 +146,16 @@ button{
 
 
 .check{
-    margin-top: 10px;
+    margin-top: 30px;
     grid-area: check;
     margin-left: 20%;
+    margin-bottom: 40px;
 }
 .retry{
-    margin-top: 10px;
+    margin-top: 30px;
     width: 500px;
     grid-area: retry;
     margin-left: 50%;
+    margin-bottom: 40px;
 }
 

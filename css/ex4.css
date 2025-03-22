@@ -134,6 +134,10 @@ dialog{
     padding-top: 20px;
     height: 75%;
 }
+#ans{
+    height: 80%;
+    width: 60%;
+}
 .result{
     text-align: center;
 }
@@ -259,24 +263,41 @@ dialog > p{
     padding: 15px;
 }
 .output{
-    margin: 30px;
+    margin: 20px;
     text-align: center;
-    font-size: 30px;
-    padding: 20px;
+    padding: 25px;
     display:grid;
     grid-template-columns: 20% 40% 40%;
     grid-template-rows: 100%;
     grid-template-areas:
        "f ans right-ans"
 }
-.func{
-    grid-area: f;
+output>*{
+    
 }
-.answer{
+.func{    
+    font-size: 30px;
+    grid-area: f; 
+}
+.func>p{
+    margin-bottom: 10px;
+    height: 60px;
+}
+.answer{ 
+    font-size: 30px;
     grid-area: ans;
 }
+.answer>p{
+    margin-bottom: 10px;
+    height: 60px;
+}
 .right-ans{
+    font-size: 30px;
     grid-area:right-ans;
+}
+.right-ans>p{
+    margin-bottom: 10px;
+    height: 60px;
 }
 .nav{
     font-size: 35px;
