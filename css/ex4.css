@@ -49,7 +49,7 @@ html{
     grid-area: bt; 
 }
 button{
-    padding: 10px;
+    padding: 13px;
     font-size:xx-large;
     color: white;
     border-radius: 60px 60px;
@@ -87,16 +87,182 @@ button{
        "first second"
 }
 .variant{
+    cursor: pointer;
     border-radius: 40px 40px;
     width: 400px;
     height: 70px;
     background-color: #6C32BF;
     margin: 50px;
-    padding: 20px;
+    padding: 10px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+.variant>p {
+    margin-top: 15px;
 }
 .first-col{
     grid-area:first;
 }
 .second-col{
     grid-area:second;
+}
+dialog{
+    width: 50%;
+    height: 50%;
+    border: 15px solid #6C32BF;
+    background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
+    border-radius: 40px 40px;
+}
+#res, #ans{
+    padding-top: 20px;
+    height: 75%;
+}
+.result{
+    text-align: center;
+}
+.result>p{
+    color: white;
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 55px;
+    background-color: #6C32BF;
+    border-radius: 30px 30px;
+}
+.result>*{ 
+    margin-top: 50px;
+    display: inline;
+    text-align: center;
+    margin-left: 50px;
+}
+.result>button{
+    width: 300px;
+    font-size: 30px;
+    border: 15px solid #6C32BF;
+    border-radius: 30px 30px;
+    background-color: white;
+    color: black;
+}
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+#start::backdrop, #res::backdrop {
+    background-color: rgb(0 0 0 / 60%);
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 40px;
+}
+dialog > p{
+    text-align: center;
+    font-size: 40px;
+}
+.rounds{
+    text-align: center;
+}
+.rounds> button{
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px 20px;
+    font-size: 50px;
+    width: 85px;
+}
+.head>*{
+    display: inline;
+}
+.head>h1{
+    margin-left: 25%;
+}
+.head{
+    margin-top: -20px;
+}
+#exit{
+    cursor: pointer;
+}
+#bt1{
+    border: 10px solid rgb(253, 144, 009);
+    background-color: rgb(253, 144, 009);
+    color: white; 
+}
+#bt1:hover{
+    border: 10px solid rgb(253, 144, 009);
+    background-color: white;
+    color: black;
+}
+#bt2{
+    border: 10px solid rgb(252, 101, 008);
+    background-color: rgb(252, 101, 008);
+    color: white;
+}
+#bt2:hover{
+    border: 10px solid rgb(252, 101, 008);
+    background-color: white;
+    color: black;
+}
+#bt3{
+    border: 10px solid rgb(224, 079, 057) ;
+    background-color: rgb(224, 079, 057) ;
+    color: white;
+}
+#bt3:hover{
+    border: 10px solid rgb(224, 079, 057) ;
+    background-color: white;
+    color: black;
+}
+#bt4{
+    border: 10px solid rgb(200, 073, 103);
+    background-color: rgb(200, 073, 103);
+    color: white;
+}
+#bt4:hover{
+    border: 10px solid rgb(200, 073, 103);
+    background-color: white;
+    color: black;
+}
+#bt5{
+    border: 10px solid rgb(173, 066, 156);
+    background-color: rgb(173, 066, 156);
+    color: white;
+}
+#bt5:hover{
+    border: 10px solid rgb(173, 066, 156);
+    background-color: white;
+    color: black;
+}
+
+.buttons{
+    text-align: center;
+}
+.buttons>*{
+    margin: 30px;
+    padding: 15px;
+}
+.output{
+    margin: 30px;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    display:grid;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+       "f ans right-ans"
+}
+.func{
+    grid-area: f;
+}
+.answer{
+    grid-area: ans;
+}
+.right-ans{
+    grid-area:right-ans;
+}
+.nav{
+    font-size: 35px;
+    font-weight: bold;
 }

@@ -22,6 +22,77 @@
             </div>
         </div>
         <div class="body">
+            <button type="button" onclick="window.start.showModal()">
+                Открыть как модалку
+            </button>
+            <button type="button" onclick="window.res.showModal()">
+                Открыть как модалку
+            </button>
+            <dialog id="start">
+                <h1>УГАДАЙ ИМЯ</h1>
+                <p>Количество раундов</p>
+                <div class="rounds">
+                    <button type="button" id="bt1">1</button>
+                    <button type="button" id="bt2">2</button>
+                    <button type="button" id="bt3">3</button>
+                    <button type="button" id="bt4">4</button>
+                    <button type="button" id="bt5">5</button>
+                </div>
+                <div class="buttons">
+                    <a href="../index.html">
+                        <button type="button">НА ГЛАВНУЮ</button>
+                    </a>
+                    <button type="button" onclick="window.start.close()">ИГРАТЬ</button>
+                </div>    
+            </dialog>
+
+            <dialog id="res">
+                <h1>РЕЗУЛЬТАТ</h1>
+                <div class="result">
+                    <p>n/m</p>
+                    <button id="show" onclick="window.ans.showModal()">Показать ответы</button>
+                </div>
+                <p>Количество раундов</p>
+                <div class="rounds">
+                    <button type="button" id="bt1">1</button>
+                    <button type="button" id="bt2">2</button>
+                    <button type="button" id="bt3">3</button>
+                    <button type="button" id="bt4">4</button>
+                    <button type="button" id="bt5">5</button>
+                </div>
+                <div class="buttons">
+                    <a href="../index.html">
+                        <button type="button">НА ГЛАВНУЮ</button>
+                    </a>
+                    <button type="button" onclick="window.start.close()">ИГРАТЬ</button>
+                </div>    
+            </dialog>
+
+            <dialog id="ans">
+                <div class="head">
+                    <img src="../image/exit.png" alt="exit" width="80px" height="80px" id="exit" onclick="window.ans.close()"/>
+                    <h1>ОТВЕТЫ</h1>
+                </div>
+                <div class="output">
+                    <div class="func">
+                        <p class="nav">Функция</p>
+                        <p>0011</p>
+                        <p>1101</p>
+                    </div>
+                    <div class="answer">
+                        <p class="nav">Ваш ответ</p>
+                        <p>jkvbsikdncjnsd</p>
+                        <p>jbnvoswbnocsd</p>
+
+                    </div>
+                    <div class="rigth-ans">
+                        <p class="nav">Верный ответ</p>
+                        <p>ojuvowsubdhoiswbdc</p>
+                        <p>khedbciksabcasc</p>
+                    </div>
+                </div>   
+            </dialog>
+
             <div class="exercise">
                 <p>Узнайте имя функции от 2-х аргументов</p>
             </div>
