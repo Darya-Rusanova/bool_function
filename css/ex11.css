@@ -66,6 +66,9 @@ button{
 .second-col{
     grid-area: second;
 }
+.center{
+    grid-area: cent;
+}
 .answer{ 
     grid-area: ans;
     margin: 0 auto;
@@ -92,6 +95,7 @@ button{
     height: 20px;
 }
 .class{
+    display: none;
     grid-area: class;
     margin: 0 auto;
     border: 5px solid #6C32BF;
@@ -127,8 +131,9 @@ button{
     grid-template-rows: auto auto auto 10% ;
     grid-template-areas:
        "first second gen"
+       "cent cent cent"
 }
-.first-col > p,.second-col>p{
+.first-col > p, .second-col>p, .center>p{
     margin: 40px;
     background-color: white;
     color: rgb(0, 0, 0);
@@ -139,7 +144,6 @@ button{
     text-align: center;
     width: 300px;
 }
-
 
 .checkbox-input {
     appearance: none;
