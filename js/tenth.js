@@ -3,7 +3,7 @@
 
     function init() {
         document.addEventListener("keyup", enterUp);
-        document.getElementById("retry").addEventListener("click",gen);
+        document.getElementById("generate").addEventListener("click",gen);
         document.querySelectorAll(".variant").forEach(element => {
             element.addEventListener("click",click);
         });
@@ -22,7 +22,7 @@
         {
             c+= Math.round(Math.random());
         }
-        o.innerText = c;
+        o.innerText = c.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
         let ans=[];
         if (c[0]==0)ans.push(1);
         else ans.push(0);

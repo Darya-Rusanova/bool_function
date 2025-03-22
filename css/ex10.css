@@ -69,6 +69,7 @@ button{
     margin-right: 500px;
     text-align: left;
     grid-area: gen;
+    cursor: pointer;
 }
 .exercise{
     grid-area: ex;

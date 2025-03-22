@@ -27,7 +27,7 @@
         for(let i=0;i< len; i++){
             vector+= Math.round(Math.random());
         }
-        document.getElementById("vector").innerText = vector.replace(/\B(?=(\d{4})+(?!\d))/g, " ");;
+        document.getElementById("vector").innerText = vector.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
         document.getElementById("input").innerText = "";
     }
 

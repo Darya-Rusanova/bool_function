@@ -38,6 +38,9 @@ button{
     margin-top: 30px;
     grid-area: gen;
 }
+#gen{
+    cursor: pointer;
+}
 .icon{
     grid-area: icon;
 }
