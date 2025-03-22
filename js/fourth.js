@@ -19,6 +19,9 @@ var functions = {"0001":"конъюнкция",
 var rounds = 1;
 var cur_round = 1;
 var correct_ans = 0;
+var round_functions = [];
+var round_answers = [];
+var round_correct_ans = [];
 
 (function () {
     window.addEventListener('load', init);
@@ -29,10 +32,12 @@ var correct_ans = 0;
         document.querySelectorAll(".rounds button").forEach(bt => {
             bt.addEventListener("click", chooseRounds);
         });
-        document.getElementById("play").addEventListener("click", play);
+        document.querySelectorAll("#play").forEach(v => {
+            v.addEventListener("click", play);
+        });
         document.getElementById("check").addEventListener("click", check);
-        document.querySelectorAll("#variant").forEach(bt => {
-            bt.addEventListener("click", chooseVariant);
+        document.querySelectorAll(".variant").forEach(v => {
+            v.addEventListener("click", chooseVariant);
         });
     }
     function enterUp(event) {
@@ -43,18 +48,14 @@ var correct_ans = 0;
     }
     function chooseRounds(){
         rounds = this.innerText;
-        if(document.querySelectorAll(".clicked")!==null){
-            document.querySelectorAll(".clicked").forEach(element => {
-                element.classList.remove("clicked"); 
-             });
+        if(document.querySelector(".clicked")!==null){
+            document.querySelector(".clicked").classList.remove("clicked"); 
         }
         this.classList.add("clicked");
     }
     function chooseVariant(){
-        if(document.querySelectorAll(".clicked")!==null){
-            document.querySelectorAll(".clicked").forEach(element => {
-                element.classList.remove("clicked"); 
-             });
+        if(document.querySelector(".variant.clicked")!==null){
+            document.querySelector(".variant.clicked").classList.remove("clicked"); 
         }
         this.classList.add("clicked");
     };
@@ -90,20 +91,56 @@ var correct_ans = 0;
       }
 
     function play(){
-        document.getElementById("cur_round").innerText = cur_round;
+        window.res.close();
+        var nav_func = document.createElement('p');
+        nav_func.classList.add("nav");
+        nav_func.innerText = "Функция";
+        var nav_ans = document.createElement('p');
+        nav_ans.classList.add("nav");
+        nav_ans.innerText = "Ваш ответ";
+        var nav_right_ans = document.createElement('p');
+        nav_right_ans.classList.add("nav");
+        nav_right_ans.innerText = "Верный ответ";
+        document.querySelector(".func").replaceChildren(nav_func);
+        document.querySelector(".answer").replaceChildren(nav_ans);
+        document.querySelector(".right-ans").replaceChildren(nav_right_ans);
+        document.getElementById("cur_round").innerText = cur_round; 
         generate();
       }
     function check() {
-        var correct = functions[document.getElementById("vector").innerText];
-        if(document.querySelector("#variant.clicked ").innerText = correct) correct_ans++;
-        cur_round++;
-        if(cur_round>rounds) result();
-        else play();
+        if(document.querySelector(".variant.clicked ")!==null){
+            var correct = functions[document.getElementById("vector").innerText];
+            if(document.querySelector(".variant.clicked ").innerText == correct) correct_ans++;
+            round_functions.push(document.getElementById("vector").innerText);
+            round_answers.push(document.querySelector(".variant.clicked > p").innerText);
+            round_correct_ans.push(correct);
+            cur_round++;
+            document.querySelector(".variant.clicked").classList.remove("clicked");
+            if(cur_round>rounds) result();
+            else play();
+        }
         };
         
     function result(){
+        
         document.getElementById("correct").innerText = correct_ans;
         document.getElementById("rounds").innerText = rounds;
-    }
+        window.res.showModal();
+        for(let i = 0; i<rounds; i++){
+            let func = document.createElement('p');
+            func.innerText = round_functions[i];
+            document.querySelector(".func").appendChild(func);
+            let ans = document.createElement('p');
+            ans.innerText = round_answers[i];
+            document.querySelector(".answer").appendChild(ans);
+            let ans_corr = document.createElement('p');
+            ans_corr.innerText = round_correct_ans[i];
+            document.querySelector(".right-ans").appendChild(ans_corr);
+        }
 
+        cur_round = 1;  
+        round_functions = [];
+        round_answers = [];
+        round_correct_ans = []; 
+    }
 })();

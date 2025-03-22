@@ -106,7 +106,7 @@ button{
     font-size: 25px;
     text-align: center;
 }
-#checked{
+.variant.clicked{
     border: 10px solid #6C32BF;
     background-color: #6C32BF;
     color: white;
