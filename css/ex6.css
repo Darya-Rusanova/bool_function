@@ -65,11 +65,50 @@ button{
     padding-left: 7%;
     padding-top: 5%;
     height: auto;
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+       "x1 x2 x3 l r and"
+       "notx1 notx2 notx3 or del del"
+}
+#x1{
+    grid-area: x1;
+}
+#x2{
+    grid-area: x2;
+}
+#x3{
+    grid-area: x3;
+}
+#notx1{
+    grid-area: notx1;
+}
+#notx2{
+    grid-area: notx2;
+}
+#notx3{
+    grid-area: notx3;
+}
+#and{
+    grid-area: and;
+}
+#or{
+    grid-area: or;
+}
+#r_bracket{
+    grid-area: r;
+}
+#l_bracket{
+    grid-area: l;
+}
+#del{
+    width: 175px;
+    grid-area: del;
 }
 .calc>*{
     text-align: center;
-    margin-bottom: 5px;
-    display: inline;
+    margin: 5px;
     width: 80px;
     height: 80px;
     color: black;
@@ -126,7 +165,7 @@ button{
 }
 #input{
     color: rgb(0, 0, 0);
-    border-radius: 35px 35px;
+    border-radius: 40px 40px;
     border:none;
     font-size: x-large;
     padding: 10px;
@@ -135,7 +174,17 @@ button{
     margin-bottom: 50px;
     width: 80%;
     height: auto;
-    min-height: 80px;
+    min-height: 100px;
+    background-color: white;
+}
+#message{
+    margin:auto;
+    margin-right: 40%;
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    border: 10px solid #6C32BF;
+    border-radius: 35px 35px;
     background-color: white;
 }
 .input{
