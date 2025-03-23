@@ -36,7 +36,6 @@
     function retry(){
         document.querySelectorAll("input[type=checkbox]").forEach(element => {
             element.checked = false;
-           
         });
         document.getElementById("classes").style.display = 'block';
     }
@@ -48,6 +47,7 @@
         chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0};
         full = 1;
         cur_n = 1;
+        console.log(document.getElementById("answer").classList)
         document.getElementById("answer").classList = "";
 
         let td = document.createElement("td");
