@@ -106,7 +106,7 @@ button{
     font-size: 25px;
     text-align: center;
 }
-.variant.clicked{
+.variant.checked{
     border: 10px solid #6C32BF;
     background-color: #6C32BF;
     color: white;
@@ -209,7 +209,7 @@ dialog > p{
     background-color: rgb(253, 144, 009);
     color: white; 
 }
-#bt1:hover, #bt1.clicked{
+#bt1:hover, #bt1.checked{
     border: 10px solid rgb(253, 144, 009);
     background-color: white;
     color: black;
@@ -219,7 +219,7 @@ dialog > p{
     background-color: rgb(252, 101, 008);
     color: white;
 }
-#bt2:hover, #bt2.clicked{
+#bt2:hover, #bt2.checked{
     border: 10px solid rgb(252, 101, 008);
     background-color: white;
     color: black;
@@ -229,7 +229,7 @@ dialog > p{
     background-color: rgb(224, 079, 057) ;
     color: white;
 }
-#bt3:hover, #bt3.clicked{
+#bt3:hover, #bt3.checked{
     border: 10px solid rgb(224, 079, 057) ;
     background-color: white;
     color: black;
@@ -239,7 +239,7 @@ dialog > p{
     background-color: rgb(200, 073, 103);
     color: white;
 }
-#bt4:hover, #bt4.clicked{
+#bt4:hover, #bt4.checked{
     border: 10px solid rgb(200, 073, 103);
     background-color: white;
     color: black;
@@ -249,7 +249,7 @@ dialog > p{
     background-color: rgb(173, 066, 156);
     color: white;
 }
-#bt5:hover, #bt5.clicked{
+#bt5:hover, #bt5.checked{
     border: 10px solid rgb(173, 066, 156);
     background-color: white;
     color: black;

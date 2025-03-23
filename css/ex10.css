@@ -127,14 +127,14 @@ button{
     grid-area: center;
     margin: 0 auto;
 }
-.non-checked{
+.variant{
     height: 60px;
     border-radius: 30px 30px;
     background-color: white;
     border: 5px solid white;
 
 }
-.non-checked:hover{
+.variant:hover{
     border: 5px solid #6C32BF;
 }
 .checked{
@@ -159,4 +159,3 @@ button{
     margin-left: 50%;
     margin-bottom: 40px;
 }
-

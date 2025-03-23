@@ -28,7 +28,7 @@ var round_correct_ans = [];
 
     function init() {
         window.start.showModal();
-        // document.addEventListener("keyup", enterUp);
+        document.addEventListener("keydown", ignore);
         document.querySelectorAll(".rounds button").forEach(bt => {
             bt.addEventListener("click", chooseRounds);
         });
@@ -40,30 +40,27 @@ var round_correct_ans = [];
             v.addEventListener("click", chooseVariant);
         });
     }
-    // function enterUp(event) {
-    //     if (event.code == "Enter"){
-    //         if(cur_round == rounds) result();
-    //         else check();
-    //     }
-    // }
+    function ignore(event) {
+        if (event.code == "Escape") event.preventDefault();
+    }
     function chooseRounds(){
         rounds = this.innerText;
         
-        if(document.querySelectorAll(".clicked")!==null){
-            document.querySelectorAll(".clicked").forEach(element => {
-                element.classList.remove("clicked");
+        if(document.querySelectorAll(".checked")!==null){
+            document.querySelectorAll(".checked").forEach(element => {
+                element.classList.remove("checked");
             });
         }
-        // this.classList.add("clicked");
+        // this.classList.add("checked");
         document.querySelectorAll("#" + this.id).forEach(element => {
-            element.classList.add("clicked");
+            element.classList.add("checked");
         });
     }
     function chooseVariant(){
-        if(document.querySelector(".variant.clicked")!==null){
-            document.querySelector(".variant.clicked").classList.remove("clicked"); 
+        if(document.querySelector(".variant.checked")!==null){
+            document.querySelector(".variant.checked").classList.remove("checked"); 
         }
-        this.classList.add("clicked");
+        this.classList.add("checked");
     };
 
     function generateVector(){
@@ -117,14 +114,14 @@ var round_correct_ans = [];
         generate();
       }
     function check() {
-        if(document.querySelector(".variant.clicked ")!==null){
+        if(document.querySelector(".variant.checked ")!==null){
             var correct = functions[document.getElementById("vector").innerText];
-            if(document.querySelector(".variant.clicked ").innerText == correct) correct_ans++;
+            if(document.querySelector(".variant.checked ").innerText == correct) correct_ans++;
             round_functions.push(document.getElementById("vector").innerText);
-            round_answers.push(document.querySelector(".variant.clicked > p").innerText);
+            round_answers.push(document.querySelector(".variant.checked > p").innerText);
             round_correct_ans.push(correct);
             cur_round++;
-            document.querySelector(".variant.clicked").classList.remove("clicked");
+            document.querySelector(".variant.checked").classList.remove("checked");
             if(cur_round>rounds) result();
             else play();
         }
