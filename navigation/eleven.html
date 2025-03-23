@@ -30,14 +30,14 @@
                 <h1>ПОЛНОТА ФУНКЦИИ</h1>
                 <div class="setting">
                     <div class="set-function">
-                        <p class="name">Кол-во функций: <span id="f-low">3</span>-<span id="f-high">8</span></p>
-                        <input type="range" min="1" max="10" value="3" class="slide" id="lower">
-                        <input type="range" min="1" max="10" value="8" class="slide" id="higher">
+                        <p class="name">Кол-во функций: <span id="text-f-low-1">1</span>-<span id="text-f-high-1">10</span></p>
+                        <input type="range" min="1" max="10" value="1" class="slide" id="f-low-1">
+                        <input type="range" min="1" max="10" value="10" class="slide" id="f-high-1">
                     </div>
                     <div class="set-argument">
-                        <p class="name">Кол-во переменных: <span id="arg">1</span>-<span id="arg">4</span></p>
-                        <input type="range" min="1" max="4" value="1" class="slide" id="low">
-                        <input type="range" min="1" max="4" value="3" class="slide" id="high">
+                        <p class="name">Кол-во переменных: <span id="text-arg-low">1</span>-<span id="text-arg-high">4</span></p>
+                        <input type="range" min="1" max="4" value="1" class="slide" id="arg-low-1">
+                        <input type="range" min="1" max="4" value="4" class="slide" id="arg-high-1">
                     </div>
                 </div>
                 <div class="buttons">
@@ -56,14 +56,14 @@
                 </div>
                 <div class="setting">
                     <div class="set-function">
-                        <p class="name">Кол-во функций: <span id="f-low">2</span>-<span id="f-high">4</span></p>
-                        <input type="range" min="1" max="4" value="2" class="slide" id="lower">
-                        <input type="range" min="1" max="4" value="4" class="slide" id="higher">
+                        <p class="name">Кол-во функций: <span id="text-f-low-2">1</span>-<span id="text-f-high-2">10</span></p>
+                        <input type="range" min="1" max="10" value="1" class="slide" id="f-low-2">
+                        <input type="range" min="1" max="10" value="10" class="slide" id="f-high-2">
                     </div>
                     <div class="set-argument">
-                        <p class="name">Кол-во переменных: <span id="arg">1</span>-<span id="arg">4</span></p>
-                        <input type="range" min="1" max="4" value="1" class="slide" id="low">
-                        <input type="range" min="1" max="4" value="3" class="slide" id="high">
+                        <p class="name">Кол-во переменных: <span id="text-arg-low-2">1</span>-<span id="text-arg-high-2">4</span></p>
+                        <input type="range" min="1" max="4" value="1" class="slide" id="arg-low-2">
+                        <input type="range" min="1" max="4" value="4" class="slide" id="arg-high-2">
                     </div>
                 </div>
                 <div class="buttons">
@@ -80,8 +80,8 @@
                     <h1>ОТВЕТЫ</h1>
                 </div>
                 <div class="notif">
-                    <p>Ваш ответ:<span>jbvosbvsdv</span></p>
-                    <p>Верный ответ:<span>jbvosbvsdv</span></p>
+                    <p>Ваш ответ: <span id="text_ans"></span></p>
+                    <p>Верный ответ: <span id="text_ans_correct"></span></p>
                 </div>
                 <div class="table">
                     <table>
@@ -117,16 +117,16 @@
             </div>  
             <div class="answer">
                 <div class="full-or-not">
-                    <p id="incomplete">Неполное</p>
+                    <p id="incomplete">Неполная</p>
                     <label class="switch">
                         <input type="checkbox" id="switch">
                         <span class="slider round"></span>
                     </label>
-                    <p id="complete">Полное</p>
+                    <p id="complete">Полная</p>
                 </div>
             </div>
             <div class="class" id="classes">
-                    <legend>Выберите классы, которым принадлежит неполное множество:</legend>
+                    <legend>Выберите классы, которым принадлежит неполная система:</legend>
                   
                     <div>
                       <input type="checkbox" id="T0" class="checkbox-input" name="T0"/>

@@ -270,7 +270,6 @@ dialog{
     padding-left: 40px;
     padding-right: 40px;
     font-size: 40px;
-    background-color: red;
     border-radius: 30px 30px;
 }
 .result>*{ 
