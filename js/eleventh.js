@@ -22,6 +22,7 @@
     // задать из начальной всплывашки
     var num_functions = 4;
     var n = 2;
+    var cur_n = 1;
 
     var correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1, "full":1};
     var chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0};
@@ -32,8 +33,16 @@
         // n = document.getElementById().value;
         correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1, "full":1};
         chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0};
-        var full = 1;
+        full = 1;
+        cur_n = 1;
         generate();
+    }
+
+    function appendClassList(classList, n){
+        var tr = document.createElement("tr");
+        // classList.pop();
+        // Object.classList
+        
     }
 
     function generateVector(){
@@ -48,6 +57,9 @@
             if(correct_ans[key] == 1) full = 0;
         });
         correct_ans["full"] = full;
+
+        appendClassList(classes, cur_n);
+
         return vector.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
     }
 
