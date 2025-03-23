@@ -102,7 +102,6 @@ button{
     height: 20px;
 }
 .class{
-    display: none;
     grid-area: class;
     margin: 0 auto;
     border: 5px solid #6C32BF;
