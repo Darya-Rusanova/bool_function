@@ -24,6 +24,49 @@
             </div>
         </div>
         <div class="body">
+            <button  onclick="window.res.showModal()"></button>
+
+            <dialog id="res">
+                <h1>РЕЗУЛЬТАТ</h1>
+                <div class="result">
+                    <p><span id="correct">n</span>/<span id="rounds">m</span></p>
+                </div>
+                <div class="answer">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>T0</th>
+                            <th>T1</th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                        </tr>
+                        <tr>
+                            <td>Ваш ответ</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Верный ответ</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>+</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="buttons">
+                    <a href="../index.html">
+                        <button type="button">НА ГЛАВНУЮ</button>
+                    </a>
+                    <button type="button" id="play"  onclick="window.res.close()">ИГРАТЬ ЗАНОВО</button>
+                </div>    
+            </dialog>
+
             <div class="exercise">
                 <p>Выберите предполные классы, которым функция принадлежит</p>
             </div>
@@ -54,9 +97,6 @@
                 <div class="variant" id="L">
                     <p>L</p>
                 </div>
-            </div>
-            <div class="retry">
-                <button id="retry">ПОПРОБОВАТЬ СНОВА</button>
             </div>
             <div class="check">
                 <button id="check">ПРОВЕРИТЬ</button>

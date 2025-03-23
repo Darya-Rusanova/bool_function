@@ -48,13 +48,13 @@ button{
     grid-area: body;
     margin-top: 30px;
     display:grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     grid-template-rows: auto auto auto 10% ;
     grid-template-areas:
-       "ex ex"
-       "block block"
-       "var var"
-       "retry check"
+       "ex"
+       "block"
+       "var"
+       "check"
 }
 .block{
     grid-area: block;
@@ -66,7 +66,7 @@ button{
 }
 #generate{
     margin-top: 30px;
-    margin-right: 500px;
+    margin-left: -25px;
     text-align: left;
     grid-area: gen;
     cursor: pointer;
@@ -95,7 +95,7 @@ button{
     padding: 10px;
     text-align: center;
     width: 500px;
-    margin-left: 40%;
+    margin-left: 45%;
     height: 70px;
 }
 .variants{    
@@ -126,6 +126,7 @@ button{
 .variants>.variant{
     grid-area: center;
     margin: 0 auto;
+    margin-bottom: 40px;
 }
 .variant{
     height: 60px;
@@ -147,15 +148,57 @@ button{
 
 
 .check{
-    margin-top: 30px;
+    margin-top: 50px;
     grid-area: check;
-    margin-left: 20%;
+    margin: 0 auto;
     margin-bottom: 40px;
 }
-.retry{
-    margin-top: 30px;
-    width: 500px;
-    grid-area: retry;
-    margin-left: 50%;
-    margin-bottom: 40px;
+dialog{
+    width: 50%;
+    height: 70%;
+    border: 15px solid #6C32BF;
+    background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
+    border-radius: 40px 40px;
+}
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+#res::backdrop {
+    background-color: rgb(0 0 0 / 60%);
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 50px;
+}
+.result>p{
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 45px;
+    background-color: #6C32BF;
+    border-radius: 20px 20px;
+    width: 120px;
+    text-align: center;
+    margin: 0 auto;
+}
+.buttons{
+    text-align: center;
+}
+.buttons>*{
+    margin: 30px;
+    padding: 15px;
+}
+.answer{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    padding: 20px;
+}
+th, td{
+    padding: 20px;
+    padding-left: 40px;
 }
