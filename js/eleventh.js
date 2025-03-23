@@ -3,7 +3,9 @@
 
     function init() {
         window.start.showModal();
-        document.getElementById("play").addEventListener("click", play);
+        document.querySelectorAll("#play").forEach(element => {
+            element.addEventListener("click", play);
+        });
         document.getElementById("check").addEventListener("click", result);
         document.addEventListener("keydown", ignore);
         document.querySelector("input[type=checkbox]").addEventListener("change", toggle);
@@ -20,8 +22,9 @@
     }
 
     // задать из начальной всплывашки
-    var num_functions = 4;
+    var num_functions = 3;
     var n = 2;
+    var cur_n = 1;
 
     var correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1, "full":1};
     var chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0};
@@ -32,9 +35,20 @@
         // n = document.getElementById().value;
         correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1, "full":1};
         chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0};
-        var full = 1;
+        full = 1;
+        cur_n = 1;
+        document.getElementById("answer").classList = "";
+
+        let td = document.createElement("td");
+        td.innerHTML = "<b>Ваш ответ</b>";
+        document.getElementById("chosen_answers").replaceChildren(td);
+        td = document.createElement("td");
+        td.innerHTML = "<b>Верный ответ</b>";
+        document.getElementById("correct_answers").replaceChildren(td);
+        
         generate();
     }
+
 
     function generateVector(){
         var vector = "";
@@ -86,20 +100,41 @@
         return ans;
     }
     function check(){
+        var text_ans = "ВЕРНО";
+        // console.log(document.querySelector("input[type=checkbox]").checked);
         if(document.querySelector("input[type=checkbox]").checked){
-            if(correct_ans["full"] == 1) console.log("correct");
-            else console.log("incorrect");
+            if(correct_ans["full"] == 1) text_ans = "ВЕРНО";
+            else text_ans = "НЕВЕРНО";
         }
         else{
-            Object.keys(chosen_ans).forEach(key => {
-                chosen_ans[key] = document.getElementById(key).checked + 0;
-            });
+            if(correct_ans["full"] == 1) text_ans = "НЕВЕРНО";
         }
-
-        console.log("correct_ans");
-        console.log(correct_ans);
-        console.log("chosen_ans");
-        console.log(chosen_ans);
+        Object.keys(chosen_ans).forEach(key => {
+            chosen_ans[key] = document.getElementById(key).checked + 0;
+        });
+        Object.keys(chosen_ans).forEach(func => {
+            let td_chosen = document.createElement("td");
+            td_chosen.innerText = (chosen_ans[func] == 1) ? "+" : "-";
+            let td_correct = document.createElement("td");
+            td_correct.innerText = (correct_ans[func] == 1) ? "+" : "-";
+            if(chosen_ans[func]==correct_ans[func]){
+                td_chosen.classList.add("correct");
+            }
+            else{
+                td_chosen.classList.add("incorrect");
+                text_ans = "НЕВЕРНО";
+            }
+            if(text_ans=="ВЕРНО") document.getElementById("answer").classList.add("correct_div");
+            else document.getElementById("answer").classList.add("incorrect_div");
+            document.getElementById("answer").innerText = text_ans;
+            document.getElementById("chosen_answers").appendChild(td_chosen);
+            document.getElementById("correct_answers").appendChild(td_correct);
+        });
+        window.res.showModal();
+        // console.log("correct_ans");
+        // console.log(correct_ans);
+        // console.log("chosen_ans");
+        // console.log(chosen_ans);
     }
     function result(){
         check();

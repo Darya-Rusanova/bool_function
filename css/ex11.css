@@ -412,3 +412,17 @@ th, td{
 #answers>*{
     margin: 0 auto;
 }
+.incorrect{
+    color: rgb(163, 16, 21);
+}
+.correct{
+    color: rgb(11, 122, 11);
+}
+.incorrect_div{
+    color: black; 
+    background-color: rgb(163, 16, 21);
+}
+.correct_div{
+    color: white;
+    background-color: rgb(11, 122, 11);
+}
