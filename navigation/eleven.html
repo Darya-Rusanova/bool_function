@@ -24,6 +24,91 @@
             </div>
         </div>
         <div class="body">
+            <button onclick="window.start.showModal()"></button>
+            <button onclick="window.res.showModal()"></button>
+            <dialog id="start">
+                <h1>ПОЛНОТА ФУНКЦИИ</h1>
+                <div class="setting">
+                    <div class="set-function">
+                        <p class="name">Количество функций: <span id="f-low">3</span>-<span id="f-high">8</span></p>
+                        <input type="range" min="1" max="10" value="3" class="slide" id="lower">
+                        <input type="range" min="1" max="10" value="8" class="slide" id="higher">
+                    </div>
+                    <div class="set-argument">
+                        <p class="name">Количество переменных: <span id="arg">1</span>-<span id="arg">4</span></p>
+                        <input type="range" min="1" max="4" value="1" class="slide" id="low">
+                        <input type="range" min="1" max="4" value="3" class="slide" id="high">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="../index.html">
+                        <button type="button">НА ГЛАВНУЮ</button>
+                    </a>
+                    <button type="button" id="play" onclick="window.start.close()">ИГРАТЬ</button>
+                </div>    
+            </dialog>
+
+            <dialog id="res">
+                <h1>РЕЗУЛЬТАТ</h1>
+                <div class="result">
+                    <p><span id="correct">n</span>/<span id="rounds">m</span></p>
+                    <button id="show" onclick="window.ans.showModal()">Показать ответы</button>
+                </div>
+                <div class="setting">
+                    <div class="set-function">
+                        <p class="name">Количество функций: <span id="f-low">3</span>-<span id="f-high">8</span></p>
+                        <input type="range" min="1" max="10" value="3" class="slide" id="lower">
+                        <input type="range" min="1" max="10" value="8" class="slide" id="higher">
+                    </div>
+                    <div class="set-argument">
+                        <p class="name">Количество переменных: <span id="arg">1</span>-<span id="arg">4</span></p>
+                        <input type="range" min="1" max="4" value="1" class="slide" id="low">
+                        <input type="range" min="1" max="4" value="3" class="slide" id="high">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="../index.html">
+                        <button type="button">НА ГЛАВНУЮ</button>
+                    </a>
+                    <button type="button" id="play" onclick="window.res.close()">ИГРАТЬ ЗАНОВО</button>
+                </div>    
+            </dialog>
+
+            <dialog id="ans">
+                <div class="head">
+                    <img src="../image/exit.png" alt="exit" width="80px" height="80px" id="exit" onclick="window.ans.close()"/>
+                    <h1>ОТВЕТ: <span>DHBVKDHB</span></h1>
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>T0</th>
+                            <th>T1</th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>L</th>
+                        </tr>
+                        <tr>
+                            <td>f1</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>f2</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>+</td>
+                        </tr>
+                    </table>
+                </div>
+            </dialog>
+
             <div class="exercise">
                 <p> Определите полным или нет является набор функций. Если система б.ф. неполна, то выберите замкнутый класс, которому набор функций принадлежит.</p>
             </div>
@@ -72,9 +157,6 @@
                         <input type="checkbox" id="m" class="checkbox-input" name="m" />
                         <label for="m">Монотонные функции</label>
                     </div>
-            </div>
-            <div class="retry">
-                <button id="retry">ПОПРОБОВАТЬ СНОВА</button>
             </div>
             <div class="check">
                 <button id="check">ПРОВЕРИТЬ</button>

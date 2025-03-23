@@ -272,9 +272,6 @@ dialog > p{
     grid-template-areas:
        "f ans right-ans"
 }
-output>*{
-    
-}
 .func{    
     font-size: 30px;
     grid-area: f; 

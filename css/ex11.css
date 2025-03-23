@@ -54,14 +54,14 @@ button{
     grid-area: body;
     margin-top: 30px;
     display:grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     grid-template-rows: auto auto auto auto 10% ;
     grid-template-areas:
-       "ex ex"
-       "func func"
-       "ans ans"
-       "class class"
-       "retry check"
+       "ex"
+       "func"
+       "ans"
+       "class"
+       "check"
 }
 .first-col{
     grid-area: first;
@@ -184,13 +184,7 @@ button{
 .check{
     margin-top: 30px;
     grid-area: check;
-    margin-left: 20%;
-}
-.retry{
-    margin-top: 30px;
-    width: 500px;
-    grid-area: retry;
-    margin-left: 50%;
+    margin: 0 auto;
 }
 
 
@@ -254,4 +248,165 @@ button{
   
   .slider.round:before {
     border-radius: 50%;
-  }
+}
+
+dialog{
+    width: 50%;
+    height: 55%;
+    border: 15px solid #6C32BF;
+    background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
+    border-radius: 40px 40px;
+}
+#res, #ans{
+    padding-top: 20px;
+    height: 75%;
+}
+
+.result{
+    text-align: center;
+}
+.result>p{
+    color: white;
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 55px;
+    background-color: #6C32BF;
+    border-radius: 30px 30px;
+}
+.result>*{ 
+    margin-top: 50px;
+    display: inline;
+    text-align: center;
+    margin-left: 50px;
+}
+.result>button{
+    width: 300px;
+    font-size: 30px;
+    border: 15px solid #6C32BF;
+    border-radius: 30px 30px;
+    background-color: white;
+    color: black;
+}
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+#start::backdrop, #res::backdrop {
+    background-color: rgb(0 0 0 / 60%);
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 40px;
+}
+.head>*{
+    display: inline;
+}
+.head>h1{
+    margin-left: 13%;
+}
+.head{
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+#exit{
+    cursor: pointer;
+}
+dialog > p{
+    text-align: center;
+    font-size: 40px;
+}
+.set-function>*, .set-argument>*{
+    display: inline-block;
+}
+.setting{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.slide {
+    -webkit-appearance: none;
+    margin-top: 45px;
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    background: #ccc;
+    border-radius: 10px 10px;
+    outline: none;
+}
+
+.slide input {
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    left: 25%;
+    top: 15px;
+    width: 50%;
+    outline: none;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.slide::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px 10px;
+    background: #6C32BF;
+    cursor: pointer;
+
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+}
+
+.slide::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 30px 30px;
+    background: #6C32BF;
+    cursor: pointer;
+
+    pointer-events: all;
+    position: relative;
+}
+.name{
+    width: 450px;
+    font-size: 30px;
+}
+.buttons{
+    text-align: center;
+}
+.buttons>*{
+    margin: 30px;
+    padding: 15px;
+}
+.table{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    padding: 20px;
+}
+th, td{
+    padding: 20px;
+    padding-left: 40px;
+}
+#ans::-webkit-scrollbar {
+    width: 15px;
+}
+  
+#ans::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: #8338EC;
+}
+#ans::-webkit-scrollbar-button:increment:increment {
+    height: 10%;
+    display: block;
+    background: transparent;
+}
