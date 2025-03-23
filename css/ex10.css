@@ -59,7 +59,7 @@ button{
 .block{
     grid-area: block;
     display:grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 64% auto;
     grid-template-rows: auto ;
     grid-template-areas:
        "func gen"

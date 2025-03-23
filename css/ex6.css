@@ -197,4 +197,17 @@ button{
     grid-area: retry;
     margin-left: 27%;
 }
+#res{
+    width: 50%;
+    height: 30%;
+    font-size: 40px;
+    border: 15px solid #6C32BF;
+    border-radius: 35px 35px;
+}
+#close{
+    cursor: pointer;
+    text-align: right;
+    margin-left: 85%;
+}
+
 
