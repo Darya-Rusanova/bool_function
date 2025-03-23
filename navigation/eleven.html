@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="body">
-            <button onclick="window.start.showModal()"></button>
-            <button onclick="window.res.showModal()"></button>
+            <!-- <button onclick="window.start.showModal()"></button> -->
+            <!-- <button onclick="window.res.showModal()"></button> -->
             <dialog id="start">
                 <h1>ПОЛНОТА ФУНКЦИИ</h1>
                 <div class="setting">
@@ -52,13 +52,13 @@
                 <h1>РЕЗУЛЬТАТ</h1>
                 <div class="result">
                     <p><span id="correct">n</span>/<span id="rounds">m</span></p>
-                    <button id="show" onclick="window.ans.showModal()">Показать ответы</button>
+                    <button id="show" onclick="window.answers.showModal()">Показать ответы</button>
                 </div>
                 <div class="setting">
                     <div class="set-function">
-                        <p class="name">Количество функций: <span id="f-low">3</span>-<span id="f-high">8</span></p>
-                        <input type="range" min="1" max="10" value="3" class="slide" id="lower">
-                        <input type="range" min="1" max="10" value="8" class="slide" id="higher">
+                        <p class="name">Количество функций: <span id="f-low">2</span>-<span id="f-high">4</span></p>
+                        <input type="range" min="1" max="4" value="2" class="slide" id="lower">
+                        <input type="range" min="1" max="4" value="4" class="slide" id="higher">
                     </div>
                     <div class="set-argument">
                         <p class="name">Количество переменных: <span id="arg">1</span>-<span id="arg">4</span></p>
@@ -74,9 +74,9 @@
                 </div>    
             </dialog>
 
-            <dialog id="ans">
+            <dialog id="answers">
                 <div class="head">
-                    <img src="../image/exit.png" alt="exit" width="80px" height="80px" id="exit" onclick="window.ans.close()"/>
+                    <img src="../image/exit.png" alt="exit" width="80px" height="80px" id="exit" onclick="window.answers.close()"/>
                     <h1>ОТВЕТ: <span>DHBVKDHB</span></h1>
                 </div>
                 <div class="table">
@@ -88,22 +88,6 @@
                             <th>S</th>
                             <th>M</th>
                             <th>L</th>
-                        </tr>
-                        <tr>
-                            <td>f1</td>
-                            <td>+</td>
-                            <td>-</td>
-                            <td>+</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>f2</td>
-                            <td>+</td>
-                            <td>-</td>
-                            <td>+</td>
-                            <td>-</td>
-                            <td>+</td>
                         </tr>
                     </table>
                 </div>
