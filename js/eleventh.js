@@ -19,6 +19,9 @@
         var div = document.getElementById("classes");
         if(this.checked) div.style.display = 'none';
         else div.style.display = 'block';
+        document.querySelectorAll(".checkbox-input").forEach(element => {
+            element.checked = false;
+        });
     }
 
     // задать из начальной всплывашки
@@ -26,14 +29,22 @@
     var n = 2;
     var cur_n = 1;
 
-    var correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1, "full":1};
+    var correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1};
     var chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0};
     var full = 1;
 
+    function retry(){
+        document.querySelectorAll("input[type=checkbox]").forEach(element => {
+            element.checked = false;
+           
+        });
+        document.getElementById("classes").style.display = 'block';
+    }
     function play(){
         // num_functions = document.getElementById("").value;
         // n = document.getElementById().value;
-        correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1, "full":1};
+        retry();
+        correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1};
         chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0};
         full = 1;
         cur_n = 1;
@@ -47,6 +58,7 @@
         document.getElementById("correct_answers").replaceChildren(td);
         
         generate();
+        console.log(correct_ans);
     }
 
 
@@ -57,11 +69,9 @@
             vector+= Math.round(Math.random());
         }
         let classes = classList(vector);
-        Object.keys(correct_ans).forEach(key => {
+        Object.keys(chosen_ans).forEach(key => {
             correct_ans[key] *= classes[key];
-            if(correct_ans[key] == 1) full = 0;
         });
-        correct_ans["full"] = full;
         return vector.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
     }
 
@@ -72,6 +82,7 @@
     }
 
     function generate(){
+        retry();
         document.querySelector(".center").replaceChildren();
         document.querySelector(".first-col").replaceChildren();
         document.querySelector(".second-col").replaceChildren();
@@ -96,19 +107,24 @@
         ans["S"] = samo(vector);
         ans["M"] = mono(vector);
         ans["L"] = lin(vector);
-        ans["full"] = (ans["T0"] == 1 || ans["T1"] == 1 || ans["S"] == 1 || ans["L"] == 1 || ans["M"] == 1) ? 1 : 0;
+        // ans["full"] = (ans["T0"] == 1 || ans["T1"] == 1 || ans["S"] == 1 || ans["L"] == 1 || ans["M"] == 1) ? 0 : 1;
         return ans;
     }
     function check(){
         var text_ans = "ВЕРНО";
+        var full = 1;
+        Object.keys(correct_ans).forEach(key => {
+            if(correct_ans[key]==1) full=0;
+        });
         // console.log(document.querySelector("input[type=checkbox]").checked);
         if(document.querySelector("input[type=checkbox]").checked){
-            if(correct_ans["full"] == 1) text_ans = "ВЕРНО";
+            if(full == 1) text_ans = "ВЕРНО";
             else text_ans = "НЕВЕРНО";
         }
         else{
-            if(correct_ans["full"] == 1) text_ans = "НЕВЕРНО";
+            if(full == 1) text_ans = "НЕВЕРНО";
         }
+        console.log(text_ans, full);
         Object.keys(chosen_ans).forEach(key => {
             chosen_ans[key] = document.getElementById(key).checked + 0;
         });
@@ -126,6 +142,7 @@
             }
             if(text_ans=="ВЕРНО") document.getElementById("answer").classList.add("correct_div");
             else document.getElementById("answer").classList.add("incorrect_div");
+            
             document.getElementById("answer").innerText = text_ans;
             document.getElementById("chosen_answers").appendChild(td_chosen);
             document.getElementById("correct_answers").appendChild(td_correct);
