@@ -51,7 +51,7 @@
             <dialog id="res">
                 <h1>РЕЗУЛЬТАТ</h1>
                 <div class="result">
-                    <p><span id="correct">n</span>/<span id="rounds">m</span></p>
+                    <p id="answer"></p>
                     <button id="show" onclick="window.answers.showModal()">Показать ответы</button>
                 </div>
                 <div class="setting">
@@ -89,20 +89,11 @@
                             <th>M</th>
                             <th>L</th>
                         </tr>
+                        <tr id="chosen_answers">
                             <td>Ваш ответ</td>
-                            <td>+</td>
-                            <td>-</td>
-                            <td>+</td>
-                            <td>-</td>
-                            <td>+</td>
                         </tr>
-                        <tr>
+                        <tr id="correct_answers">
                             <td>Верный ответ</td>
-                            <td>+</td>
-                            <td>-</td>
-                            <td>+</td>
-                            <td>-</td>
-                            <td>+</td>
                         </tr>
                         
                     </table>
@@ -134,28 +125,28 @@
                     <legend>Выберите классы, которым принадлежит неполное множество:</legend>
                   
                     <div>
-                      <input type="checkbox" id="t0" class="checkbox-input" name="t0"/>
-                      <label for="t0">Cохраняющие константу 0</label>
+                      <input type="checkbox" id="T0" class="checkbox-input" name="T0"/>
+                      <label for="T0">Cохраняющие константу 0</label>
                     </div>
                   
                     <div>
-                      <input type="checkbox" id="t1" class="checkbox-input" name="t1" />
-                      <label for="t1">Сохраняющие константу 1</label>
+                      <input type="checkbox" id="T1" class="checkbox-input" name="T1" />
+                      <label for="T1">Сохраняющие константу 1</label>
                     </div>
 
                     <div>
-                        <input type="checkbox" id="l" class="checkbox-input" name="l" />
-                        <label for="l">Линейные функции</label>
+                        <input type="checkbox" id="L" class="checkbox-input" name="L" />
+                        <label for="L">Линейные функции</label>
                     </div>
 
                     <div>
-                        <input type="checkbox" id="s" class="checkbox-input" name="s" />
-                        <label for="s">Самодвойственные функции</label>
+                        <input type="checkbox" id="S" class="checkbox-input" name="S" />
+                        <label for="S">Самодвойственные функции</label>
                     </div>
 
                     <div>
-                        <input type="checkbox" id="m" class="checkbox-input" name="m" />
-                        <label for="m">Монотонные функции</label>
+                        <input type="checkbox" id="M" class="checkbox-input" name="M" />
+                        <label for="M">Монотонные функции</label>
                     </div>
             </div>
             <div class="check">
