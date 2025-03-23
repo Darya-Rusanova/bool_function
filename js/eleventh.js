@@ -2,12 +2,13 @@
     window.addEventListener('load', init);
 
     function init() {
+        window.start.showModal();
+        document.getElementById("play").addEventListener("click", play);
         document.getElementById("check").addEventListener("click", result);
         document.addEventListener("keydown", ignore);
         document.querySelector("input[type=checkbox]").addEventListener("change", toggle);
         document.getElementById('gen').addEventListener("click", generate);
-        generate(); // убрать
-        console.log(lin("0111"));
+        // generate(); // убрать
     }
       function ignore(event) {
         if (event.code == "Escape") event.preventDefault();
@@ -19,7 +20,7 @@
     }
 
     // задать из начальной всплывашки
-    var num_functions = 1;
+    var num_functions = 4;
     var n = 2;
 
     var correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1, "full":1};
@@ -80,7 +81,7 @@
         ans["T1"] = (vector[vector.length-1]==1)+0;
         ans["S"] = samo(vector);
         ans["M"] = mono(vector);
-        ans["L"] = mono(vector);
+        ans["L"] = lin(vector);
         ans["full"] = (ans["T0"] == 1 || ans["T1"] == 1 || ans["S"] == 1 || ans["L"] == 1 || ans["M"] == 1) ? 1 : 0;
         return ans;
     }
@@ -102,6 +103,7 @@
     }
     function result(){
         check();
+        window.res.showModal();
         // num_functions = 1;
         // n = 2;
        
@@ -137,11 +139,6 @@
         for (let number of numbers) sum += number;
         return sum;
     };
-
-    // function test()
-    // {
-    //     console.log(lin("1111"));
-    // }
 
     function samo(c){
         for (let i=0;i<(c.length-1)/2;i++){
