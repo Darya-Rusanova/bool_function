@@ -3,6 +3,7 @@
 
     function init() {
         document.addEventListener("keyup", enterUp);
+        document.addEventListener("keydown", ignore);
         document.getElementById("generate").addEventListener("click", generateVector);
         document.querySelectorAll(".variant").forEach(element => {
             element.addEventListener("click", chooseVariant);
@@ -13,6 +14,9 @@
     function enterUp(event) {
         if (event.code == "Enter") check();
       }
+      function ignore(event) {
+        if (event.code == "Escape") event.preventDefault();
+    }
 
       correct_ans = {}
       chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0}
