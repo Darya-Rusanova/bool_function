@@ -24,12 +24,10 @@
             </div>
         </div>
         <div class="body">
-            <button  onclick="window.res.showModal()"></button>
-
             <dialog id="res">
                 <h1>РЕЗУЛЬТАТ</h1>
                 <div class="result">
-                    <p><span id="correct">n</span>/<span id="rounds">m</span></p>
+                    <p><span id="correct">n</span>/5</p>
                 </div>
                 <div class="answer">
                     <table>
@@ -41,21 +39,21 @@
                             <th>M</th>
                             <th>L</th>
                         </tr>
-                        <tr>
-                            <td>Ваш ответ</td>
-                            <td>+</td>
+                        <tr id="chosen_answers">
+                            <td><b>Ваш ответ</b></td>
+                            <!-- <td>+</td>
                             <td>-</td>
                             <td>+</td>
                             <td>-</td>
-                            <td>-</td>
+                            <td>-</td> -->
                         </tr>
-                        <tr>
-                            <td>Верный ответ</td>
-                            <td>+</td>
+                        <tr id="correct_answers">
+                            <td><b>Верный ответ</b></td>
+                            <!-- <td>+</td>
                             <td>-</td>
                             <td>+</td>
                             <td>-</td>
-                            <td>+</td>
+                            <td>+</td> -->
                         </tr>
                     </table>
                 </div>

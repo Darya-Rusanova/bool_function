@@ -202,3 +202,9 @@ th, td{
     padding: 20px;
     padding-left: 40px;
 }
+.incorrect{
+    color: rgb(163, 16, 21);
+}
+.correct{
+    color: rgb(11, 122, 11);
+}

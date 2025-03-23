@@ -2,30 +2,37 @@
     window.addEventListener('load', init);
 
     function init() {
-        document.addEventListener("keyup", enterUp);
         document.addEventListener("keydown", ignore);
         document.getElementById("generate").addEventListener("click", generateVector);
         document.querySelectorAll(".variant").forEach(element => {
             element.addEventListener("click", chooseVariant);
         });
-        document.getElementById("check").addEventListener("click", check)
+        document.getElementById("check").addEventListener("click", check);
         generateVector();
+        document.getElementById("play").addEventListener("click", play);
     }
-    function enterUp(event) {
-        if (event.code == "Enter") check();
-      }
       function ignore(event) {
         if (event.code == "Escape") event.preventDefault();
     }
 
       correct_ans = {}
-      chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0}
+      chosen_ans = {}
 
+    function play(){
+        let td = document.createElement("td");
+        td.innerHTML = "<b>Ваш ответ</b>";
+        document.getElementById("chosen_answers").replaceChildren(td);
+        td = document.createElement("td");
+        td.innerHTML = "<b>Верный ответ</b>";
+        document.getElementById("correct_answers").replaceChildren(td);
+
+        generateVector();
+    }
     function generateVector(){
         correct_ans = {}
         chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0}
         var n = Math.round(Math.random()*3+1);
-        var vector = ""
+        var vector = "";
         for (var i=0;i<Math.pow(2,n);i++) vector+= Math.round(Math.random());
         document.getElementById("out").innerText = vector.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
         retry();
@@ -51,26 +58,24 @@
     };
 
     function check(){
-        console.log(Object.keys(chosen_ans));
-        Object.keys(chosen_ans).forEach(func => {
-            if(chosen_ans[func] == 1) {
-                if(chosen_ans[func] == correct_ans[func]){
-                    document.getElementById(func).classList.add("chosen_correct");
-                }
-                else{
-                    document.getElementById(func).classList.add("chosen_incorrect");
-                }
-            }
-            else{
-                if(chosen_ans[func] == correct_ans[func]){
-                    document.getElementById(func).classList.add("not_chosen_correct");
-                }
-                else{
-                    document.getElementById(func).classList.add("not_chosen_incorrect");
-                }
-            }
-        });
+        let correct = 0;
 
+        Object.keys(chosen_ans).forEach(func => {
+            let td_chosen = document.createElement("td");
+            td_chosen.innerText = (chosen_ans[func] == 1) ? "+" : "-";
+            let td_correct = document.createElement("td");
+            td_correct.innerText = (correct_ans[func] == 1) ? "+" : "-";
+            if(chosen_ans[func]==correct_ans[func]){
+                correct++;
+                td_chosen.classList.add("correct");
+            }
+            else td_chosen.classList.add("incorrect");
+
+            document.getElementById("chosen_answers").appendChild(td_chosen);
+            document.getElementById("correct_answers").appendChild(td_correct);
+        });
+        document.getElementById("correct").innerText = correct;
+        window.res.showModal();
     }
 
     function classList(vector){
@@ -79,7 +84,7 @@
         ans["T1"] = (vector[vector.length-1]==1)+0;
         ans["S"] = samo(vector);
         ans["M"] = mono(vector);
-        ans["L"] = mono(vector);
+        ans["L"] = lin(vector);
         return ans;
     }
 
@@ -111,11 +116,6 @@
         for (let number of numbers) sum += number;
         return sum;
     };
-
-    // function test()
-    // {
-    //     console.log(lin("1111"));
-    // }
 
     function samo(c){
         for (let i=0;i<(c.length-1)/2;i++){
@@ -151,6 +151,4 @@
             return !(a==1) + 0;
         
     }
-
-    
 })();
