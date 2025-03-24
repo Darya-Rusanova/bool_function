@@ -10,6 +10,7 @@
     <title>Задание 6. Угадай ДНФ</title>
 </head>
 <body>
+    <div class="background-image"></div>
     <div class="container">
         <div class="header">
             <div class="button">
@@ -52,12 +53,17 @@
                 <button id="del">del</button>
             </div>
             <div class="retry">
-                <button id="retry">ПОПРОБОВАТЬ СНОВА</button>
+                <button id="retry">ОЧИСТИТЬ ПОЛЕ</button>
             </div>
+            
             <div class="check">
-                <button id="check">ПРОВЕРИТЬ</button>
+                <button id="check" onclick="window.res.showModal()">ПРОВЕРИТЬ</button>
             </div>
-            <div class="toast-overlay" id="toast-overlay"></div>
+            <dialog id="res">
+                <img src="../image/retry.png" alt="retry" width="60px" height="60px" id="close" onclick="window.res.close()"/>
+                <p><span>Неверно! Вернитесь и попробуйте еще раз.</span></p>   
+            </dialog>
+            
         </div>
     </div>
 </body>
