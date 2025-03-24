@@ -10,6 +10,9 @@
         document.addEventListener("keydown", ignore);
         document.querySelector("input[type=checkbox]").addEventListener("change", toggle);
         document.getElementById('gen').addEventListener("click", generate);
+        document.querySelectorAll("input[type=range]").forEach(element => {
+            element.addEventListener("input", change);
+        });
     }
       function ignore(event) {
         if (event.code == "Escape") event.preventDefault();
@@ -22,11 +25,26 @@
             element.checked = false;
         });
     }
+    function change(){
+        if(count==1) game=1;
+        else game=2;
+
+        var nfmin = parseInt(document.getElementById("f-low-"+game).value);
+        var nfmax = parseInt(document.getElementById("f-high-"+game).value);
+        var nmin = parseInt(document.getElementById("arg-low-"+game).value);
+        var nmax = parseInt(document.getElementById("arg-high-"+game).value);
+        if(nfmin>nfmax) nfmin = [nfmax, nfmax = nfmin][0];
+        if(nmin>nmax) nmin = [nmax, nmax = nmin][0];
+        document.getElementById("text-f-low-"+game).innerText = nfmin;
+        document.getElementById("text-f-high-"+game).innerText = nfmax;
+        document.getElementById("text-arg-low-"+game).innerText = nmin;
+        document.getElementById("text-arg-high-"+game).innerText = nmax;
+    }
 
     // задать из начальной всплывашки, это плейсхолдер
     var num_functions = 3;
     var n = 2;
-    var count = 0;
+    var count = 1;
 
     var correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1};
     var chosen_ans = {"T0":0, "T1":0, "S":0, "M":0, "L":0};
@@ -41,10 +59,6 @@
     function getNums(){
         if(count==1){
             game=1;
-            document.getElementById("f-low-2").value = document.getElementById("f-low-1").value;
-            document.getElementById("f-high-2").value = document.getElementById("f-high-1").value;
-            document.getElementById("arg-low-2").value = document.getElementById("arg-low-1").value;
-            document.getElementById("arg-high-2").value = document.getElementById("arg-high-1").value;
         }
         else game=2;
         var nfmin = parseInt(document.getElementById("f-low-"+game).value);
@@ -59,6 +73,16 @@
         if(nmin>nmax) nmin = [nmax, nmax = nmin][0];
         if(nmin == nmax) n = nmin;
         else n =  Math.floor(Math.random() * (nmax - nmin + 1)) + nmin;
+        if(game==1){
+            document.getElementById("f-low-2").value = nfmin;
+            document.getElementById("f-high-2").value = nfmax;
+            document.getElementById("arg-low-2").value = nmin;
+            document.getElementById("arg-high-2").value = nmax;
+            document.getElementById("text-f-low-2").innerText = nfmin;
+            document.getElementById("text-f-high-2").innerText = nfmax;
+            document.getElementById("text-arg-low-2").innerText = nmin;
+            document.getElementById("text-arg-high-2").innerText = nmax;
+        }
         console.log(nfmin, nfmax);
         console.log(nmin, nmax);
         console.log(num_functions);
@@ -67,7 +91,6 @@
     }
 
     function play(){
-        count++;
         getNums();
         retry();
         correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1};
@@ -137,6 +160,7 @@
         return ans;
     }
     function check(){
+        count++;
         var text_ans = "ВЕРНО";
         var full = 1;
         Object.keys(correct_ans).forEach(key => {
