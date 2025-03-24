@@ -118,7 +118,7 @@ button{
 }
 .over{
     text-decoration: overline;
-    display:inline-block;
+    display: inline-block;
 }
 .block{
     margin: 0 auto;
