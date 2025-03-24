@@ -141,6 +141,7 @@
 
     function prov(x,y){
             let a = 1;
+            if (x.length!=y.length) return 0;
             for(let i=0;i<x.length;i++){
                 if (parseInt(x[i])<parseInt(y[i])){
                     if (a>0) a--;
