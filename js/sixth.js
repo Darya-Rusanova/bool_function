@@ -12,7 +12,7 @@
         generateVector();
     }
     function enterUp(event) {
-        if (event.code == "Enter") click();
+        if (event.code == "Enter") check();
       }
 
     function typeIn(){
@@ -89,8 +89,59 @@
         return (holder.length === 0) 
     }
 
+    function isDNF(dnf){
+        let inCon = 0;
+        for(let i = 0; i<dnf.length; i++){      
+            if(dnf.slice(i, i+2) == "·(") inCon++;
+            if(inCon>0 && dnf[i] == "V"){
+                console.log("NOT DNF");
+                return 0;
+            } 
+            if(dnf[i]==")" && inCon > 0) inCon--;
+
+        }
+        inCon = 0;
+        for(let i = dnf.length-1; i>=0; i--){
+            // console.log(i, inCon, dnf.slice(i-2, i))
+            if(dnf.slice(i-2, i) == ")·") inCon++;
+            if(inCon>0 && dnf[i] == "V"){
+                console.log("NOT DNF");
+                return 0;
+            } 
+            if(dnf[i]=="(" && inCon > 0) inCon--;
+        }
+        console.log("DNF");
+        return 1;
+
+        
+
+            // dnf = dnf.split("V");
+            // let bad = 0;
+            // dnf.forEach(con => {
+            //     while(con[0] == "(") con = con.slice(1);
+            //     while(con.slice(-1) == ")") con = con.slice(0, -1);
+            //     let op_br = 0;
+            //     let cl_br = 0;
+            //     for(let i of con){
+            //         if(i=="(") op_br++;
+            //         if(i==")") cl_br++;
+            //     }
+            //     if(op_br!=cl_br){
+            //         console.log("NOT DNF")
+            //         bad = 1;
+            //     }
+                
+            // });
+            // if(bad) return 0;
+            // console.log("DNF");
+            // return 1;
+            }
+
     // на вход подается выражение БЕЗ скобок
     function isCorrect(dnf, xMax){
+        dnf.replace("(", "");
+        dnf.replace(")", "");
+        dnf = dnf.split("V");
         var vector = document.getElementById("vector").innerText.split(" ").join("");
         var n = Math.log2(vector.length);
         if(xMax !== n) return 0;
@@ -104,7 +155,6 @@
         // я по частицам собираю твой портрет...
         let finalVal = 0;
         func.forEach(element => {
-            console.log(element);
             if(element.split("·").length == 1){
                 let not = (element[0] == "!") ? 1 : 0;
                 let localVal = (not==0) ? set[parseInt(element[1])-1] : (set[parseInt(element[2])-1] == 1 ? 0 : 1);
@@ -134,7 +184,6 @@
         var xMax = 1;
         document.getElementById("input").childNodes.forEach(element => {
             let el = element.innerText;
-            // console.log(el);
             if(el.slice(-1) == "2" || el.slice(-1) == "3") xMax = Math.max(xMax, parseInt(el.slice(-1)));
             if(element.className == "over") dnf += "!";
             dnf += el.split(" ").join("");
@@ -143,13 +192,7 @@
             message(2);
             return 0;
         }
-        dnf = dnf.split("V")
-        let bad = 0;
-        dnf.forEach(con => {
-            if(!checkBrackets(con)) bad = 1;
-        });
-
-        if(bad || !isCorrect(dnf, xMax)){
+        if(!isDNF(dnf) || !isCorrect(dnf, xMax)){
             message(0);
             return 0;
         }
