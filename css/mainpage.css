@@ -3,6 +3,7 @@ html{
     background-attachment: fixed;
     height: 100%;
 }
+/*
 .container{  
     display:grid;
     grid-template-columns: 100%;
@@ -13,12 +14,18 @@ html{
 }
 .header{
     grid-area:head;
+}*/
+.container{
+    margin-top: 100px;
 }
-.body {
+.info{
+    text-align: center;
+}
+.body {    
     grid-area:body;
     display:grid;
     grid-template-columns: 40% 55%;
-    grid-template-rows: auto;
+    grid-template-rows: 700px;
     grid-template-areas:
        "info games"
 }
@@ -32,6 +39,7 @@ html{
 }
 
 .games {
+    margin-left: 30px;
     padding-bottom: 20px;
     background-color: #6C32BF;
     grid-area:games;
@@ -45,6 +53,10 @@ html{
     grid-template-areas:
        "first second third"
 
+}
+.trash{
+    grid-area: trash;
+    height: 10px;
 }
 
 .games::-webkit-scrollbar {

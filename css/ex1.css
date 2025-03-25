@@ -57,6 +57,7 @@ button{
 }
 .icon{
     grid-area: icon;
+
 }
 .info{
     grid-area: info;
@@ -71,15 +72,17 @@ input{
     padding: 10px;
     text-align: center;
     margin-top: 50px;
-    width: 800px;
+    width: 100%;
 }
 .input{
     width: 50%;
     margin: 0 auto;
+    text-align: center;
 }
 .result{
     width: 20%;
     margin: 0 auto;
+    text-align: center;
 }
 .output{
     margin: 0 auto;

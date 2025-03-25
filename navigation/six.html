@@ -20,7 +20,7 @@
             </div>
        
             <div class="icon"></div>
-            <div class="info">
+            <div class="info" onclick="window.help.showModal()">
                 <img src="../image/question.png" alt="info" width="80px" height="80px"/>
             </div>
         </div>
@@ -62,6 +62,19 @@
             <dialog id="res">
                 <img src="../image/close.png" alt="close" width="60px" height="60px" id="close" onclick="window.res.close()"/>
                 <p><span>Неверно! Вернитесь и попробуйте еще раз.</span></p>   
+            </dialog>
+            
+            <dialog id="help">
+                <div class="help-head">
+                    <h1>СПРАВКА</h1>
+                    <img src="../image/close.png" alt="close-help" width="60px" height="60px" id="close-help" onclick="window.help.close()"/>
+                </div>
+                <div class="help-body">
+                    <p>Двоичным набором называется конечная последовательность, состоящая из нулей и единиц.</p> 
+                    <p>Число нулей и единиц в двоичном наборе σ˜ называется длиной набора и обозначается как |σ˜|.</p>
+                    <p>Булевой функцией называется отображение из En  в E. n — размерность функции.</p>
+                    <p>Если функция имеет размерность n, то говорим, что функция зависит от n аргументов. Для того, чтобы задать булеву функцию размерности n, необходимо каждому двоичному набору длины n поставить в соответствие 0 или 1. </p> 
+                </div>
             </dialog>
             
         </div>
