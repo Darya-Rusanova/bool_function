@@ -18,7 +18,7 @@ html{
 .container{
     margin-top: 100px;
 }
-.info{
+.logo{
     text-align: center;
 }
 .body {    
@@ -29,7 +29,7 @@ html{
     grid-template-areas:
        "info games"
 }
-.info{
+.logo{
     grid-area:info;
     background-color: white;
     border-radius: 60px 60px;
