@@ -10,9 +10,9 @@
         if (event.code == "Enter") click();
     }
 
-    let vector = "0110";
 
     function g() {
+        let vector = document.getElementById("in").value
         et = new Set(vector); 
         es = Array.from(et);
         console.log(et);
@@ -74,18 +74,13 @@
             for (let i=0;i<t.length;i++)
             {
                 let v="";
-           /*     for(let j = 0; j<t[i].length; j++){                 
-                    if((parseInt(t[i])&(1<<j)) == 0) v+= "⋅" + '>vid/<'+((t[i].length)-j)+ 'x>"revo"=ssalc vid<';
-                    else if((parseInt(t[i])&(1<<j)) == 1) v += "⋅" + (t[i].length-j) + "x";
-                    console.log(v);
-                }*/
                 for(let j = 0;j<t[i].length;j++){                 
-                    if(t[i][j]==0) v+= '<div class ="over">x'+(j+1)+'</div>';
-                    else if(t[i][j]==1) v += 'x'+(j+1);
+                    if(t[i][j]==0) v+= '<div class ="over">x'+(j+1)+'</div>·';
+                    else if(t[i][j]==1) v += 'x'+(j+1)+'·';
                 }
-                ans += v+ " ∨ ";
+                ans += v.slice(0,-1)+ " ∨ ";
             }
-            document.getElementById("test").innerHTML=ans;
+            document.getElementById("test").innerHTML=ans.slice(0, -3);
         }
     }
     function isArraysEqual(firstArray, secondArray) {
@@ -99,7 +94,7 @@
     function prov(x,y){
             let a = 1;
             for(let i=0;i<x.length;i++){
-                if (parseInt(x[i])<parseInt(y[i]) && y[i]!='2'){
+                if (parseInt(x[i])<parseInt(y[i])){
                     if (a>0) a--;
                     else return 0;
                 }

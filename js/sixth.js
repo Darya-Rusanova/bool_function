@@ -19,10 +19,8 @@
         let input = document.getElementById("input").innerText.split(" ").join("");
         let text = this.innerHTML;
         let span = document.createElement("span");
-        // console.log(input.slice(-2, -1), this.id.slice(-2, -1));
         if(this.id == "del"){
             if(input.length == 0) return 0;
-            console.log("removing " + document.getElementById("input").lastChild.innerHTML);
             document.getElementById("input").removeChild(document.getElementById("input").lastChild);
             return 0;
         }
@@ -50,12 +48,20 @@
         document.getElementById("input").innerText = "";
     }
     function message(mes){
+        var msg = "";
         switch(mes){
-            case 0: div = "хуета";
-            case 1: div = "норм";
-            case 2: div = "перепиши";
+            case 0:
+                msg = "Неверно! Вернитесь и попробуйте еще раз.";
+                break;
+            case 1: 
+                msg = "Верно!";
+                break;
+            case 2: 
+                msg = "Некорректная запись! Вернитесь и попробуйте еще раз.";
+                break;
         }
-        document.getElementById("message").innerHTML = div;
+        document.getElementById("message").innerText = msg;
+        window.res.showModal();
     }
 
     function isWrittenCorrect(){
@@ -80,21 +86,58 @@
                 }
             }
         }
-        return (holder.length === 0) // return true if length is 0, otherwise false
+        return (holder.length === 0) 
+    }
+
+    // на вход подается выражение БЕЗ скобок
+    function isCorrect(dnf, xMax){
+        var vector = document.getElementById("vector").innerText.split(" ").join("");
+        var n = Math.log2(vector.length);
+        if(xMax !== n) return 0;
+        for(let i = 0; i<vector.length; i++){
+            if(returnBool(dnf, i.toString(2).padStart(n, "0")) != vector[i]) return 0;
+        }
+        return 1;
+    }
+
+    function returnBool(func, set){
+        // я по частицам собираю твой портрет...
+        let finalVal = 0;
+        func.forEach(element => {
+            console.log(element);
+            if(element.split("·").length == 1){
+                let not = (element[0] == "!") ? 1 : 0;
+                let localVal = (not==0) ? set[parseInt(element[1])-1] : (set[parseInt(element[2])-1] == 1 ? 0 : 1);
+                finalVal = finalVal | localVal;
+            }
+            else{
+                let localFinal = 1;
+                let con = element.split("·");
+                con.forEach(element => {
+                    let not = (element[0] == "!") ? 1 : 0;
+                    let localVal = (not==0) ? set[parseInt(element[1])-1] : (set[parseInt(element[2])-1] == 1 ? 0 : 1);
+                    localFinal *= localVal;
+                });
+                finalVal = finalVal | localFinal;
+            }
+        });
+        return finalVal;
     }
 
     function check() {
-        
-        document.getElementById("message").innerHTML = "";
+        if(document.getElementById("input").innerText == "") return 0;
         if(!isWrittenCorrect()){   
             message(2);
             return 0;
         }
-        var vector = document.getElementById("vector").innerText.split(" ").join("");
         var dnf = "";
+        var xMax = 1;
         document.getElementById("input").childNodes.forEach(element => {
+            let el = element.innerText;
+            // console.log(el);
+            if(el.slice(-1) == "2" || el.slice(-1) == "3") xMax = Math.max(xMax, parseInt(el.slice(-1)));
             if(element.className == "over") dnf += "!";
-            dnf += element.innerText;
+            dnf += el.split(" ").join("");
         });
         if(!checkBrackets(dnf)){
             message(2);
@@ -103,15 +146,14 @@
         dnf = dnf.split("V")
         let bad = 0;
         dnf.forEach(con => {
-            if(!checkBrackets(con)){
-                message(0);
-                bad = 1;
-            }
-            
+            if(!checkBrackets(con)) bad = 1;
         });
-        if(bad) return 0;
-        // console.log(dnf);
-        // console.log("all good")
+
+        if(bad || !isCorrect(dnf, xMax)){
+            message(0);
+            return 0;
+        }
+        message(1);
     }
 
     function retry(){

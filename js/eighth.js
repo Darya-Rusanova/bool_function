@@ -24,7 +24,6 @@
               for(let j = 0; j<n; j++){                 
                     if((cur&(1<<j)) == 0) v+= "⋅" + '>vid/<'+(n-j)+ 'x>"revo"=ssalc vid<';
                     else v += "⋅" + (n-j) + "x";
-//                  if((cur&(1<<j)) == 0) v+="¬";
                 }
                 ans += v.split("").reverse().join("").slice(0,-1)+ " ∨ ";
             }
