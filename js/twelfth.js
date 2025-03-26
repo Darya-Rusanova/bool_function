@@ -7,7 +7,7 @@
     }
 
     function enterUp(event) {
-        if (event.code == "Enter") click();
+        if (event.code == "Enter") g();
     }
 
 

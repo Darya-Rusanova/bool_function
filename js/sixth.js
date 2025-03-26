@@ -112,32 +112,8 @@
         }
         console.log("DNF");
         return 1;
-
-        
-
-            // dnf = dnf.split("V");
-            // let bad = 0;
-            // dnf.forEach(con => {
-            //     while(con[0] == "(") con = con.slice(1);
-            //     while(con.slice(-1) == ")") con = con.slice(0, -1);
-            //     let op_br = 0;
-            //     let cl_br = 0;
-            //     for(let i of con){
-            //         if(i=="(") op_br++;
-            //         if(i==")") cl_br++;
-            //     }
-            //     if(op_br!=cl_br){
-            //         console.log("NOT DNF")
-            //         bad = 1;
-            //     }
-                
-            // });
-            // if(bad) return 0;
-            // console.log("DNF");
-            // return 1;
             }
 
-    // на вход подается выражение БЕЗ скобок
     function isCorrect(dnf, xMax){
         dnf.replace("(", "");
         dnf.replace(")", "");
