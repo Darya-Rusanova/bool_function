@@ -54,8 +54,13 @@
                 <button id="retry">ПОПРОБОВАТЬ СНОВА</button>
             </div>
             <div class="check">
-                <button id="check">ПРОВЕРИТЬ</button>
+                <button id="check" onclick="window.res.showModal()">ПРОВЕРИТЬ</button>
             </div>
+
+            <dialog id="res">
+                <img src="../image/close.png" alt="close" width="60px" height="60px" id="close" onclick="window.res.close()"/>
+                <p><span id="message">Неверно! Вернитесь и попробуйте еще раз.</span></p>   
+            </dialog>
 
             <dialog id="help">
                 <div class="help-head">
