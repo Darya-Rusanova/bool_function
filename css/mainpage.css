@@ -2,34 +2,240 @@ html{
     background: linear-gradient(to bottom right, #8338EC, #FB5607, #FFBE0B);
     background-attachment: fixed;
     height: 100%;
+} 
+
+@media (min-width:1450px){
+    .container{
+        margin-top: 100px;
+    }  
+    #logo{
+        width:400px;
+        height:200px;
+    }
+    .body {  
+        grid-area:body;
+        display:grid;
+        grid-template-columns: 40% 55%;
+        grid-template-rows: 700px;
+        grid-template-areas:
+        "info games"
+    }
+    .games {
+        margin-left: 30px;
+        padding-bottom: 20px;
+        background-color: #6C32BF;
+        grid-area:games;
+        border-radius: 45px 45px;
+        margin: 40px;
+        padding-right: 30px;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 33% 33% 33% 33%;
+        grid-template-areas:
+           "1 2 3"
+           "4 5 6"
+           "7 8 9"
+           "10 11 12"
+    
+    }
 }
-/*
-.container{  
-    display:grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 100px 70%;
-    grid-template-areas:
-       "head"
-       "body"
+@media (1000px <= width <= 1450px){
+    .container{
+        margin-top: 100px;
+    }  
+    #logo{
+        width: 90%;
+        aspect-ratio: 2/1;
+    }
+    .body {  
+        grid-area:body;
+        display:grid;
+        grid-template-columns: 40% 55%;
+        grid-template-rows: 700px;
+        grid-template-areas:
+        "info games"
+    }
+    .games {
+        margin-left: 30px;
+        padding-bottom: 20px;
+        background-color: #6C32BF;
+        grid-area:games;
+        border-radius: 45px 45px;
+        margin: 40px;
+        padding-right: 30px;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 33% 33% 33% 33% 33% 33%;
+        grid-template-areas:
+           "1 2"
+           "3 4"
+           "5 6"
+           "7 8"
+           "9 10"
+           "11 12"
+    }
 }
-.header{
-    grid-area:head;
-}*/
-.container{
-    margin-top: 100px;
+@media (800px <= width <= 1000px){
+    .container{
+        margin-top: 10px;
+    }  
+    #logo{
+        width:200px;
+        height:100px;
+    }
+    .body {  
+        grid-area:body;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 300px 550px;
+        grid-template-areas:
+        "info"
+        "games"
+    }
+    .games {
+        margin-left: 30px;
+        padding-bottom: 20px;
+        background-color: #6C32BF;
+        grid-area:games;
+        border-radius: 45px 45px;
+        margin: 40px;
+        padding-right: 30px;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 50% 50% 50% 50%;
+        grid-template-areas:
+           "1 2 3"
+           "4 5 6"
+           "7 8 9"
+           "10 11 12"
+    
+    }
 }
+@media (600px <= width <= 800px){
+    .container{
+        margin-top: 10px;
+    }  
+    #logo{
+        width:200px;
+        height:100px;
+    }
+    .body {  
+        grid-area:body;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 300px 550px;
+        grid-template-areas:
+        "info"
+        "games"
+    }
+    .games {
+        margin-left: 30px;
+        padding-bottom: 20px;
+        background-color: #6C32BF;
+        grid-area:games;
+        border-radius: 45px 45px;
+        margin: 40px;
+        padding-right: 30px;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50% 50% 50% 50% 50%;
+        grid-template-areas:
+           "1 2"
+           "3 4"
+           "5 6"
+           "7 8"
+           "9 10"
+           "11 12"
+    }
+}
+@media (width <= 600px){
+    .container{
+        margin-top: 10px;
+    }  
+    #logo{
+        width:200px;
+        height:100px;
+    }
+    .body {  
+        grid-area:body;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 300px 550px;
+        grid-template-areas:
+        "info"
+        "games"
+    }
+    .games {
+        margin-left: 30px;
+        padding-bottom: 20px;
+        background-color: #6C32BF;
+        grid-area:games;
+        border-radius: 45px 45px;
+        margin: 40px;
+        padding-right: 30px;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50% 50% 50% 50% 50%;
+        grid-template-areas:
+           "1"
+           "2"
+           "3"
+           "4"
+           "5"
+           "6"
+           "7"
+           "8"
+           "9"
+           "10"
+           "11"
+           "12"
+    }
+}
+
+#ex1{
+    grid-area: 1;
+}
+#ex2{
+    grid-area: 2;
+}
+#ex3{
+    grid-area: 3;
+}
+#ex4{
+    grid-area: 4;
+}
+#ex5{
+    grid-area: 5;
+}
+#ex6{
+    grid-area: 6;
+}
+#ex7{
+    grid-area: 7;
+}
+#ex8{
+    grid-area: 8;
+}
+#ex9{
+    grid-area: 9;
+}
+#ex10{
+    grid-area: 10;
+}
+#ex11{
+    grid-area: 11;
+}
+#ex12{
+    grid-area: 12;
+}
+
 .logo{
     text-align: center;
-}
-.body {    
-    grid-area:body;
-    display:grid;
-    grid-template-columns: 40% 55%;
-    grid-template-rows: 700px;
-    grid-template-areas:
-       "info games"
-}
-.logo{
     grid-area:info;
     background-color: white;
     border-radius: 60px 60px;
@@ -38,22 +244,7 @@ html{
     border: 20px solid #6C32BF;
 }
 
-.games {
-    margin-left: 30px;
-    padding-bottom: 20px;
-    background-color: #6C32BF;
-    grid-area:games;
-    border-radius: 45px 45px;
-    margin: 40px;
-    padding-right: 30px;
-    overflow-y: scroll;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 100%;
-    grid-template-areas:
-       "first second third"
 
-}
 .game {
     overflow: hidden;
     cursor: pointer;
@@ -66,14 +257,14 @@ html{
     color: black;
     padding: 5px;
     transform: translateY(30%);
-    transition: all 1s ease;
+    transition: all 0.8s ease;
 }
 .game .picture{
     display: inline-block;
     position: relative;
     text-align: center;
     transform: translateY(0%);
-    transition: all 1s ease;
+    transition: all 0.8s ease;
 }
 
 .game:hover .picture{
@@ -112,21 +303,14 @@ html{
     margin:0 auto;
     padding-bottom: 20px;
 }
-.first-col{
-    grid-area:first;
-}
-.second-col{
-    grid-area:second;
-}
-.third-col{
-    grid-area:third;
-}
+
 .game{
+    text-align: center;
     margin-bottom: 20px;
     border-radius: 40px 40px;
     background-color: white;
     height: 180px;
-    width: 220px;
+    width: 90%;
     margin: 10%;
     margin-bottom: 20px;
 }
@@ -134,7 +318,6 @@ html{
     height: 150px;
     width: 150px;
     margin-top: 20px;
-    margin-left: 35px;
 }
 
 .background-image {

@@ -37,7 +37,7 @@
         document.getElementById("out").innerText = vector.replace(/\B(?=(\d{4})+(?!\d))/g, " ");
         retry();
         correct_ans = classList(vector);
-        console.log(correct_ans, chosen_ans);
+        // console.log(correct_ans, chosen_ans);
     }
 
     function retry(){
