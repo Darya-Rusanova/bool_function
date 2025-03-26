@@ -77,6 +77,7 @@
         }
         let bad = 0;
         let fict = document.getElementById("fictitious").childNodes;
+        let sign = document.getElementById("significant").childNodes;
         if(fict.length>0){
             fict.forEach(element => {
                 let num = element.innerText[1];
@@ -86,7 +87,7 @@
                 }
             });
         }
-        else{
+        if(sign.length>0){
             document.getElementById("significant").childNodes.forEach(element => {
                 let num = element.innerText[1];
                 if(isFictive(vector, num) == 1){

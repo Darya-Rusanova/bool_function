@@ -189,7 +189,6 @@
             }
             else document.getElementById("text_ans").classList.add("correct");
         }
-        console.log(text_ans, full);
         Object.keys(chosen_ans).forEach(key => {
             chosen_ans[key] = document.getElementById(key).checked + 0;
         });

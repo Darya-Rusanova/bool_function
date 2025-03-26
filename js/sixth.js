@@ -89,38 +89,69 @@
         return (holder.length === 0) 
     }
 
-    function isDNF(dnf){
-        let inCon = 0;
-        for(let i = 0; i<dnf.length; i++){      
-            if(dnf.slice(i, i+2) == "·(") inCon++;
-            if(inCon>0 && dnf[i] == "V"){
-                console.log("NOT DNF");
-                return 0;
-            } 
-            if(dnf[i]==")" && inCon > 0) inCon--;
-
-        }
-        inCon = 0;
-        for(let i = dnf.length-1; i>=0; i--){
-            // console.log(i, inCon, dnf.slice(i-2, i))
-            if(dnf.slice(i-2, i) == ")·") inCon++;
-            if(inCon>0 && dnf[i] == "V"){
-                console.log("NOT DNF");
-                return 0;
-            } 
-            if(dnf[i]=="(" && inCon > 0) inCon--;
-        }
-        console.log("DNF");
-        return 1;
+    function toPostfix(expr) {
+        var priority = {'V': 1, '·': 2};
+        var output = [];
+        var stack = [];
+        for (let char of expr) {
+            if (char[0] == "x") { 
+                output.push("x");
+            } else if (char == "V" || char == "·") { 
+                while (stack.length && priority[stack[stack.length - 1]] >= priority[char]) {
+                    output.push(stack.pop());
+                }
+                stack.push(char);
+            } else if (char == '(') { 
+                stack.push(char);
+            } else if (char == ')') { 
+                while (stack.length && stack[stack.length - 1] !== '(') {
+                    output.push(stack.pop());
+                }
+                stack.pop();
             }
+        }
+        while (stack.length) {
+            output.push(stack.pop());
+        }
+        return output.join('');
+    }
+    
+    function isDNF(dnf){
+        dnf = dnf.split('').reverse().join('');
+        var char = 0;
+        var operands = 0;
+        var inCon = 0;
+        while(char < dnf.length){
+            if(dnf[char] == "·"){
+                inCon = 1;
+                operands = 0;
+            }
+            if(dnf[char] == "x" && inCon==1){
+                operands++;
+                if(operands == 2){
+                    inCon = 0;
+                    operands = 0;
+                }
+            }
+            if(dnf[char] == "V" && operands < 2 && inCon){
+                console.log("NOT DNF")
+                return 0;
+            }
+            char++;
+        }
+        console.log("DNF")
+        return 1;
+    }
 
     function isCorrect(dnf, xMax){
-        dnf.replace("(", "");
-        dnf.replace(")", "");
+        dnf = dnf.replaceAll("(", "");
+        dnf = dnf.replaceAll(")", "");
+        console.log(dnf);
         dnf = dnf.split("V");
         var vector = document.getElementById("vector").innerText.split(" ").join("");
         var n = Math.log2(vector.length);
-        if(xMax !== n) return 0;
+        if(xMax > n) return 0;
+        console.log(dnf);
         for(let i = 0; i<vector.length; i++){
             if(returnBool(dnf, i.toString(2).padStart(n, "0")) != vector[i]) return 0;
         }
@@ -131,21 +162,14 @@
         // я по частицам собираю твой портрет...
         let finalVal = 0;
         func.forEach(element => {
-            if(element.split("·").length == 1){
+            let localFinal = 1;
+            let con = element.split("·");
+            con.forEach(element => {
                 let not = (element[0] == "!") ? 1 : 0;
                 let localVal = (not==0) ? set[parseInt(element[1])-1] : (set[parseInt(element[2])-1] == 1 ? 0 : 1);
-                finalVal = finalVal | localVal;
-            }
-            else{
-                let localFinal = 1;
-                let con = element.split("·");
-                con.forEach(element => {
-                    let not = (element[0] == "!") ? 1 : 0;
-                    let localVal = (not==0) ? set[parseInt(element[1])-1] : (set[parseInt(element[2])-1] == 1 ? 0 : 1);
-                    localFinal *= localVal;
-                });
-                finalVal = finalVal | localFinal;
-            }
+                localFinal *= localVal;
+            });
+            finalVal = finalVal | localFinal;
         });
         return finalVal;
     }
@@ -168,7 +192,7 @@
             message(2);
             return 0;
         }
-        if(!isDNF(dnf) || !isCorrect(dnf, xMax)){
+        if(!isDNF(toPostfix(dnf)) || !isCorrect(dnf, xMax)){
             message(0);
             return 0;
         }
