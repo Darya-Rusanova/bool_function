@@ -3,6 +3,8 @@
 
     function init() {
         document.getElementById("res").addEventListener("click", click);
+        document.getElementById("residual").disabled = true; 
+        document.getElementById("num").disabled = true; 
         document.getElementById("res").disabled = true; 
         document.addEventListener("keyup", enterUp);
         document.getElementById("vector").addEventListener("input", binprov);
@@ -10,6 +12,7 @@
         document.getElementById("num").addEventListener("input", provarg);
     }
     function enterUp(event) {
+        if(document.getElementById("res").disabled == true) return 0;
         if (event.code == "Enter") click();
     }
     function binprov(){
@@ -18,22 +21,24 @@
         let length = document.getElementById("vector").value.length;
             if (length > 0 && (length & (length - 1)) === 0) {
                 message.textContent = '';
-                document.getElementById("res").disabled = false; 
-                document.getElementById('num').disabled = false;
+                document.getElementById('residual').disabled = false;
             } else {
                 message.textContent = 'Длина не является степенью двойки';
-                document.getElementById("res").disabled = true; 
-                document.getElementById('num').disabled = true;
+                document.getElementById("residual").disabled = true;
             }
+        if (this.value=='') document.getElementById("residual").disabled = true; 
+        else  document.getElementById("residual").disabled = false; 
     }
 
     function prov(){
-        if (this.value=='') document.getElementById("res").disabled = true; 
-        else  document.getElementById("res").disabled = false; 
+        if (this.value=='') document.getElementById("num").disabled = true; 
+        else  document.getElementById("num").disabled = false; 
         this.value=this.value.replace(/[^0-1]/g,"")
         if (this.value.length>1)this.value=this.value.substr(0,1);
     }
+
     function provarg(){
+        if (this.value == '0') this.value='';
         if (this.value=='') document.getElementById("res").disabled = true; 
         else  document.getElementById("res").disabled = false; 
         this.value = this.value.replace(/[^\d]/g, "");

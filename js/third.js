@@ -4,37 +4,37 @@
     function init() {
         document.getElementById("res").addEventListener("click", click);
         document.getElementById("res").disabled = true; 
+        document.getElementById("num").disabled = true; 
         document.addEventListener("keyup", enterUp);
         document.getElementById("zero").addEventListener("input", binprov);
         document.getElementById("one").addEventListener("input", binprov);
         document.getElementById("num").addEventListener("input", provarg);
     }
     function enterUp(event) {
+        if(document.getElementById("res").disabled == true) return 0;
         if (event.code == "Enter") click();
     }
     
     function binprov(){
+        if (this.value=='') document.getElementById("num").disabled = true; 
+        else  document.getElementById("num").disabled = false; 
         const message = document.getElementById('message');
         this.value=this.value.replace(/[^0-1]/g,"");
         let length = this.value.length;
         if(document.getElementById("zero").value.length!=document.getElementById("one").value.length)
             { 
                 message.textContent = 'Длина остаточных должна быть одинаковая';
-                document.getElementById("res").disabled = true; 
                 document.getElementById('num').disabled = true;
             } 
         else 
         {
             message.textContent = '';
-            document.getElementById("res").disabled = false; 
             document.getElementById('num').disabled = false;
             if (length > 0 && (length & (length - 1)) === 0) {
                 message.textContent = '';
-                document.getElementById("res").disabled = false; 
                 document.getElementById('num').disabled = false;
             } else {
                 message.textContent = 'Длина не является степенью двойки';
-                document.getElementById("res").disabled = true; 
                 document.getElementById('num').disabled = true;
             }
         }

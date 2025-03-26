@@ -10,6 +10,7 @@
         blocksDrag();
     }
     function enterUp(event) {
+        if(document.getElementById("res").disabled == true) return 0;
         if (event.code == "Enter") check();
     }
 
