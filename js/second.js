@@ -3,11 +3,47 @@
 
     function init() {
         document.getElementById("res").addEventListener("click", click);
+        document.getElementById("residual").disabled = true; 
+        document.getElementById("num").disabled = true; 
+        document.getElementById("res").disabled = true; 
         document.addEventListener("keyup", enterUp);
+        document.getElementById("vector").addEventListener("input", binprov);
+        document.getElementById("residual").addEventListener("input", prov);
+        document.getElementById("num").addEventListener("input", provarg);
     }
     function enterUp(event) {
+        if(document.getElementById("res").disabled == true) return 0;
         if (event.code == "Enter") click();
-      }
+    }
+    function binprov(){
+        const message = document.getElementById('message');
+        this.value=this.value.replace(/[^0-1]/g,"");
+        let length = document.getElementById("vector").value.length;
+            if (length > 0 && (length & (length - 1)) === 0) {
+                message.textContent = '';
+                document.getElementById('residual').disabled = false;
+            } else {
+                message.textContent = 'Длина не является степенью двойки';
+                document.getElementById("residual").disabled = true;
+            }
+        if (this.value=='') document.getElementById("residual").disabled = true; 
+        else  document.getElementById("residual").disabled = false; 
+    }
+
+    function prov(){
+        if (this.value=='') document.getElementById("num").disabled = true; 
+        else  document.getElementById("num").disabled = false; 
+        this.value=this.value.replace(/[^0-1]/g,"")
+        if (this.value.length>1)this.value=this.value.substr(0,1);
+    }
+
+    function provarg(){
+        if (this.value == '0') this.value='';
+        if (this.value=='') document.getElementById("res").disabled = true; 
+        else  document.getElementById("res").disabled = false; 
+        this.value = this.value.replace(/[^\d]/g, "");
+        if (this.value>Math.log2(document.getElementById("vector").value.length))this.value=Math.log2(document.getElementById("vector").value.length);
+    }
 
     function click() {
         var vec = document.getElementById("vector").value;
@@ -16,7 +52,6 @@
         var ans= "";
         var off =0;
         const m = Math.pow(2,Math.log2(vec.length)-n);
-        // alert(m);
         if (val == "1")
         {
             off = m;

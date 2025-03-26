@@ -16,6 +16,8 @@ var functions = {"0001":"конъюнкция",
     "1010":"отрицание второго аргумента"
     };
 
+var game_functions = [];
+
 var rounds = 1;
 var cur_round = 1;
 var correct_ans = 0;
@@ -70,6 +72,8 @@ var round_correct_ans = [];
     }
     function generate(){
         let vector = generateVector();
+        while(game_functions.indexOf(vector) != -1) vector = generateVector();
+        game_functions.push(vector);
         document.getElementById("vector").innerText = vector;
         var names = {};
         Object.assign(names, functions);
@@ -128,7 +132,6 @@ var round_correct_ans = [];
         };
         
     function result(){
-        
         document.getElementById("correct").innerText = correct_ans;
         document.getElementById("rounds").innerText = rounds;
         window.res.showModal();
@@ -151,5 +154,6 @@ var round_correct_ans = [];
         round_functions = [];
         round_answers = [];
         round_correct_ans = []; 
+        game_functions = [];
     }
 })();
