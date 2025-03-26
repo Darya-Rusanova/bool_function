@@ -89,42 +89,69 @@
         return (holder.length === 0) 
     }
 
-    ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    function isCNF(cnf){
-        let inDis = 0;
-        let br = 0;
-        if(cnf.split("·").length == 1){
-            console.log("NOT CNF");
-            return 0;
-        }
-        cnf.split("V").forEach(element => {
-            let not = (element[0] == "!") ? 1 : 0;
-            let localVal = (not==0) ? set[parseInt(element[1])-1] : (set[parseInt(element[2])-1] == 1 ? 0 : 1);
-            localFinal = localFinal | localVal;
-        });
-        for(let i = 0; i<cnf.length; i++){
-            if(cnf[i] == "V"){
-                inDis = 1;
+    function toPostfix(expr) {
+        var priority = {'V': 1, '·': 2};
+        var output = [];
+        var stack = [];
+        for (let char of expr) {
+            if (char[0] == "x") { 
+                output.push("x");
+            } else if (char == "V" || char == "·") { 
+                while (stack.length && priority[stack[stack.length - 1]] >= priority[char]) {
+                    output.push(stack.pop());
+                }
+                stack.push(char);
+            } else if (char == '(') { 
+                stack.push(char);
+            } else if (char == ')') { 
+                while (stack.length && stack[stack.length - 1] !== '(') {
+                    output.push(stack.pop());
+                }
+                stack.pop();
             }
-            if(cnf[i] == "(" && inDis) br++;
-            if(cnf[i] == ")" && inDis){
-                if(br-1==0) inDis = 0;
-                br--;
-            };
-            if(inDis == 1 && cnf[i] == "·"){
-                console.log("NOT CNF");
+        }
+        while (stack.length) {
+            output.push(stack.pop());
+        }
+        return output.join('');
+    }
+    
+    function isCNF(cnf){
+        cnf = cnf.split('').reverse().join('');
+        var char = 0;
+        var operands = 0;
+        var inDis = 0;
+        while(char < cnf.length){
+            if(cnf[char] == "V"){
+                inDis = 1;
+                operands = 0;
+            }
+            if(cnf[char] == "x" && inDis==1){
+                operands++;
+                if(operands == 2){
+                    inDis = 0;
+                    operands = 0;
+                }
+            }
+            if(cnf[char] == "·" && operands < 2 && inDis){
+                console.log("NOT CNF")
                 return 0;
             }
+            char++;
         }
-        console.log("CNF");
+        console.log("CNF")
         return 1;
-        }
+    }
 
     function isCorrect(cnf, xMax){
+        cnf = cnf.replaceAll("(", "");
+        cnf = cnf.replaceAll(")", "");
+        console.log(cnf);
         cnf = cnf.split("·");
         var vector = document.getElementById("vector").innerText.split(" ").join("");
         var n = Math.log2(vector.length);
-        if(xMax !== n) return 0;
+        if(xMax > n) return 0;
+        console.log(cnf);
         for(let i = 0; i<vector.length; i++){
             if(returnBool(cnf, i.toString(2).padStart(n, "0")) != vector[i]) return 0;
         }
@@ -133,13 +160,10 @@
 
     function returnBool(func, set){
         // я по частицам собираю твой портрет...
-        let finalVal = 0;
-        func.forEach(element => {
-            let localFinal = 1;
-            let dis = element;
-            dis.replace("(", "");
-            dis.replace(")", "");
-            dis = dis.split("V")
+        let finalVal = 1;
+        func.forEach(element => { 
+            let localFinal = 0;
+            let dis = element.split("V");
             dis.forEach(element => {
                 let not = (element[0] == "!") ? 1 : 0;
                 let localVal = (not==0) ? set[parseInt(element[1])-1] : (set[parseInt(element[2])-1] == 1 ? 0 : 1);
@@ -149,9 +173,6 @@
         });
         return finalVal;
     }
-    ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
     
     function check() {
         if(document.getElementById("input").innerText == "") return 0;
@@ -159,7 +180,7 @@
             message(2);
             return 0;
         }
-        var cnf = "";
+        var cnf = [];
         var xMax = 1;
         document.getElementById("input").childNodes.forEach(element => {
             let el = element.innerText;
@@ -171,7 +192,7 @@
             message(2);
             return 0;
         }
-        if(!isCNF(cnf) || !isCorrect(cnf, xMax)){
+        if(!isCNF(toPostfix(cnf)) || !isCorrect(cnf, xMax)){
             message(0);
             return 0;
         }
