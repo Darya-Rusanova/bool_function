@@ -19,8 +19,16 @@
     }
     function toggle(){
         var div = document.getElementById("classes");
-        if(this.checked) div.style.display = 'none';
-        else div.style.display = 'block';
+        if(this.checked) {
+            div.style.animation = "hide 0.5s forwards";
+            setTimeout(() => {
+                div.style.display = 'none'; 
+            }, 400);
+        }
+        else {
+            div.style.display = 'block';
+            div.style.animation = "show 0.5s forwards";
+        }
         document.querySelectorAll(".checkbox-input").forEach(element => {
             element.checked = false;
         });

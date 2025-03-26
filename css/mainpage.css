@@ -18,7 +18,7 @@ html{
 .container{
     margin-top: 100px;
 }
-.info{
+.logo{
     text-align: center;
 }
 .body {    
@@ -29,7 +29,7 @@ html{
     grid-template-areas:
        "info games"
 }
-.info{
+.logo{
     grid-area:info;
     background-color: white;
     border-radius: 60px 60px;
@@ -53,6 +53,41 @@ html{
     grid-template-areas:
        "first second third"
 
+}
+.game {
+    overflow: hidden;
+    cursor: pointer;
+}
+  
+.game .text{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: black;
+    padding: 5px;
+    transform: translateY(30%);
+    transition: all 1s ease;
+}
+.game .picture{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    transform: translateY(0%);
+    transition: all 1s ease;
+}
+
+.game:hover .picture{
+    transform: translateY(-120%);
+}
+
+.game:hover .text{
+    transform: translateY(-100%);
+}
+.text__title{
+    font-size: 22px;
+}
+.text__description{
+    font-size: 18px;
 }
 .trash{
     grid-area: trash;

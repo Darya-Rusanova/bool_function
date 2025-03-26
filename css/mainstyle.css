@@ -20,7 +20,7 @@ html{
 }
 #help{
     width: 35%;
-    height: 85%;
+    height: 90%;
     text-align:  justify;
     font-size: 25px;
     border: 15px solid #6C32BF;
@@ -64,6 +64,7 @@ body:has(dialog[open]) {
        "name close"
 }
 .help-body{
+    padding: 10px;
     border: 5px solid #6C32BF;
     border-radius: 15px 15px;
     margin-top: 50px;
@@ -86,4 +87,22 @@ body:has(dialog[open]) {
     height: 10%;
     display: block;
     background: transparent;
+}
+#help{
+    display: block;
+    transform: scale(.2);
+    opacity: 0;
+    transition: all 0.1s linear;
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+}
+#help[open]{
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
 }

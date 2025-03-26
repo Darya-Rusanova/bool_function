@@ -112,6 +112,15 @@ button{
     padding: 10px;
     width: 50%;
 }
+
+@keyframes show {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes hide {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
 .class>*{
     padding: 7px;
 }
@@ -230,6 +239,7 @@ button{
     background-color: rgb(108, 50, 191);
   }
   
+  
   input:focus + .slider {
     box-shadow: 0 0 1px rgb(108, 50, 191);
   }
@@ -255,6 +265,32 @@ button{
     border: 15px solid #6C32BF;
     background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
     border-radius: 40px 40px;
+}
+#start,#res,#answers{
+    transition: display 0.2s allow-discrete, overlay 0.2s allow-discrete;
+  
+    animation: close 0.3s forwards;
+    &[open] {
+      animation: open 0.3s forwards;
+    }
+}
+  
+  @keyframes open {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes close {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
 }
 #res, #answers{
     padding-top: 20px;
