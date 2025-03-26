@@ -29,7 +29,7 @@
         let vector = document.getElementById("in").value
         et = new Set(vector); 
         es = Array.from(et);
-        console.log(et);
+        // console.log(et);
         if(es.length==1 && es[0]=='1')
         {
             document.getElementById("test").innerHTML=1;
@@ -46,7 +46,7 @@
                     vec.push((dec2bin(i).padStart(Math.log2(vector.length), '0')));
                 }
             }
-            console.log(vec);
+            // console.log(vec);
     
             let t=vec,m=[1];
             while(!isArraysEqual(t,m))
@@ -81,9 +81,9 @@
                 newSet = new Set(t); 
                 t = Array.from(newSet);
                 t.sort();
-                console.log(m,t,r);
+                // console.log(m,t,r);
             }
-            console.log(t);
+            // console.log(t);
             let ans="";
             for (let i=0;i<t.length;i++)
             {

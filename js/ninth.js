@@ -43,7 +43,6 @@
                 ans += "(" + v.split("").reverse().join("").slice(0, -3) + ") · ";
             }
         }
-        console.log(2&1, 2&(1<<1), 2&(1<<2));
         document.getElementById("out").innerHTML = ans.slice(0, -3);
     }
 })();
