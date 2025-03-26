@@ -43,7 +43,7 @@
         if (this.value=='') document.getElementById("res").disabled = true; 
         else  document.getElementById("res").disabled = false; 
         this.value = this.value.replace(/[^\d]/g, "");
-        if (this.value>Math.log2(document.getElementById("zero").value.length))this.value=Math.log2(document.getElementById("zero").value.length);
+        if (this.value>Math.log2(document.getElementById("zero").value.length*2))this.value=Math.log2(document.getElementById("zero").value.length*2);
     }
 
 
