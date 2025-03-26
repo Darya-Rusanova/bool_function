@@ -8,11 +8,14 @@
     }
 
     function enterUp(event) {
+        if(document.getElementById("res").disabled == true) return 0;
         if (event.code == "Enter") g();
     }
 
     
     function binprov(){
+        if (this.value=='') document.getElementById("res").disabled = true; 
+        else  document.getElementById("res").disabled = false; 
         const message = document.getElementById('message');
         this.value=this.value.replace(/[^0-1]/g,"");
         let length = document.getElementById("in").value.length;
