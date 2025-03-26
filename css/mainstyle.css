@@ -106,3 +106,7 @@ body:has(dialog[open]) {
     opacity: 1;
     visibility: visible;
 }
+button:disabled,
+button[disabled]{
+    background-color: darkgray;
+}
