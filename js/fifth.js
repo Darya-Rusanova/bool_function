@@ -60,19 +60,44 @@
             case 1: 
                 msg = "Верно!";
                 break;
+            case 2: 
+                msg = "Выбраны не все переменные. Вернитесь и попробуйте еще раз.";
+                break;
         }
         document.getElementById("message").innerText = msg;
         window.res.showModal();
     }
 
     function check(){
-        if(document.querySelector(".arguments").childElementCount > 0) message(0);
+        let vector = document.getElementById("vector").innerText.split(" ").join("");
+        if(document.querySelector(".arguments").childElementCount > 0){
+            message(2);
+            return 0;
+        }
         let bad = 0;
-        document.getElementById("fictitious").childNodes.forEach(element => {
-            let num = element.innerText;
-            if(isFictive(num) == 0) bad = 1;
-        });
-        if(bad) message(0);
+        let fict = document.getElementById("fictitious").childNodes;
+        if(fict.length>0){
+            fict.forEach(element => {
+                let num = element.innerText[1];
+                if(isFictive(vector, num) == 0){
+                    bad = 1;
+                    return 0;
+                }
+            });
+        }
+        else{
+            document.getElementById("significant").childNodes.forEach(element => {
+                let num = element.innerText[1];
+                if(isFictive(vector, num) == 1){
+                    bad = 1;
+                    return 0;
+                };
+            });
+        }
+        if(bad == 1){
+            message(0);
+            return 0;
+        }
         message(1);
     
     }
@@ -85,8 +110,8 @@
             for(let j=0;j<m;j++) ost_0+=vec[i+j];
         }
         for (let i=m; i<vec.length;i+=2*m){
-            for(let j=0;j<m;j++) ost_0+=vec[i+j];
-        }   
+            for(let j=0;j<m;j++) ost_1+=vec[i+j];
+        }
         if(ost_0 == ost_1) return 1;
         return 0;
     }
