@@ -63,6 +63,7 @@
             element.checked = false;
         });
         document.getElementById("classes").style.display = 'block';
+        document.getElementById("classes").style.animation = "show 0.5s forwards";
     }
     function getNums(){
         if(count==1){
@@ -73,8 +74,6 @@
         var nfmax = parseInt(document.getElementById("f-high-"+game).value);
         var nmin = parseInt(document.getElementById("arg-low-"+game).value);
         var nmax = parseInt(document.getElementById("arg-high-"+game).value);
-        console.log(nfmin, nfmax);
-        console.log(nmin, nmax);
         if(nfmin>nfmax) nfmin = [nfmax, nfmax = nfmin][0];
         if(nfmax == nfmin) num_functions = nfmax;
         else num_functions = Math.floor(Math.random() * (nfmax - nfmin + 1)) + nfmin;
@@ -91,10 +90,6 @@
             document.getElementById("text-arg-low-2").innerText = nmin;
             document.getElementById("text-arg-high-2").innerText = nmax;
         }
-        console.log(nfmin, nfmax);
-        console.log(nmin, nmax);
-        console.log(num_functions);
-        console.log(n);
         
     }
 
