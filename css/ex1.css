@@ -80,7 +80,6 @@ input{
     text-align: center;
 }
 .result{
-    width: 20%;
     margin: 0 auto;
     text-align: center;
 }
@@ -100,7 +99,7 @@ input{
 }
 
 .result>button{
-    width: 300px;
+    width: auto;
     margin-top: 20px;
     margin-bottom: 50px;
 }
