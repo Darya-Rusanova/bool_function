@@ -50,8 +50,8 @@
     }
 
     // задать из начальной всплывашки, это плейсхолдер
-    var num_functions = 3;
-    var n = 2;
+    var num_functions = 0;
+    var n = 0;
     var count = 1;
 
     var correct_ans = {"T0":1, "T1":1, "S":1, "M":1, "L":1};
@@ -136,18 +136,23 @@
 
     function generate(){
         retry();
+        var used = [];
         document.querySelector(".center").replaceChildren();
         document.querySelector(".first-col").replaceChildren();
         document.querySelector(".second-col").replaceChildren();
-        // num_functions = Math.round(Math.random() * 5 + 1);
-        for(let i = 0; i<num_functions; i++){
-            if(i%2) document.querySelector(".first-col").appendChild(createFunc(generateVector()));
+        for(let i = 0; i<num_functions; i++){  
+            var vector = generateVector();
+            if(n>1){
+                while(used.indexOf(vector) != -1) vector = generateVector();
+            }
+            used.push(vector);
+            if(i%2) document.querySelector(".first-col").appendChild(createFunc(vector));
                 else{
                     if(i+1 == num_functions){
-                        document.querySelector(".center").appendChild(createFunc(generateVector()));
+                        document.querySelector(".center").appendChild(createFunc(vector));
                     }
                     else{
-                        document.querySelector(".second-col").appendChild(createFunc(generateVector()));        
+                        document.querySelector(".second-col").appendChild(createFunc(vector));        
                     }
                 }
         }

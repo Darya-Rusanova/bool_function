@@ -18,7 +18,7 @@ var functions = {"0001":"конъюнкция",
 
 var game_functions = [];
 
-var rounds = 1;
+var rounds = 0;
 var cur_round = 1;
 var correct_ans = 0;
 var round_functions = [];
@@ -98,6 +98,7 @@ var round_correct_ans = [];
       }
 
     function play(){
+        if(rounds == 0) return 0;
         window.start.close();
         window.res.close();
         var nav_func = document.createElement('p');
