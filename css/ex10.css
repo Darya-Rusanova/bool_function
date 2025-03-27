@@ -3,6 +3,274 @@ html{
     background-attachment: fixed;
     height: 100%;
 }
+@media (min-width:1250px){
+    .buttons>*{
+        margin: 30px;
+    }
+    button{
+        font-size:xx-large;
+    }
+    .block{
+        margin: 0 auto;
+        margin-bottom: 30px;
+        grid-area: block;
+        display:grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: auto ;
+        grid-template-areas:
+           "func gen"
+    }
+    .function{
+        grid-area: func;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 60px 60px;
+        border:none;
+        font-size: x-large;
+        padding: 10px;
+        text-align: center;
+        width: 500px;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #generate{
+        margin-top: 30px;
+        margin-right: 500px;
+        text-align: left;
+        grid-area: gen;
+        cursor: pointer;
+    }
+    .variants{    
+        grid-area: var;
+        margin: 0 auto;
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "first second"
+            "center center"
+    
+    }
+    .variant{
+        width: 300px;
+    }
+    #res{
+        width: 60%;
+        height: 70%;
+        border: 15px solid #6C32BF;
+        background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
+        border-radius: 40px 40px;
+    }
+    table{
+        margin: 0 auto;
+    }
+    #res h1{
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 50px;
+    }
+    .result>p{
+        color: white;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 45px;
+        background-color: #6C32BF;
+        border-radius: 20px 20px;
+        width: 120px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .answer{
+        font-size: 30px;
+        padding: 20px;
+    }
+    th, td{
+        padding: 20px;
+        padding-left: 40px;
+    }
+}
+@media (950px <= width <= 1250px){
+    .buttons>*{
+        margin: 30px;
+    }
+    button{
+        font-size:xx-large;
+    }
+    .block{
+        margin: 0 auto;
+        margin-bottom: 30px;
+        grid-area: block;
+        display:grid;
+        grid-template-columns: 85% 15%;
+        grid-template-rows: auto ;
+        grid-template-areas:
+           "func gen"
+    }
+    .function{
+        width: 210px;
+        grid-area: func;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 60px 60px;
+        border:none;
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #generate{
+        margin-top: 30px;
+        text-align: left;
+        grid-area: gen;
+        cursor: pointer;
+    }
+    .variants{    
+        grid-area: var;
+        margin: 0 auto;
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "first second"
+            "center center"
+    
+    }
+    .variant{
+        width: 300px;
+    }
+    #res{
+        width: 80%;
+        height: 70%;
+        border: 15px solid #6C32BF;
+        background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
+        border-radius: 40px 40px;
+    }
+    table{
+        margin: 0 auto;
+    }
+    #res h1{
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 50px;
+    }
+    .result>p{
+        color: white;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 45px;
+        background-color: #6C32BF;
+        border-radius: 20px 20px;
+        width: 120px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .answer{
+        font-size: 30px;
+        padding: 20px;
+    }
+    th, td{
+        padding: 20px;
+        padding-left: 40px;
+    }
+}
+
+@media (width < 950px){
+    .buttons>*{
+        margin: 10px;
+    }
+    button{
+        font-size:large;
+    }
+    .block{
+        margin: 0 auto;
+        margin-bottom: 30px;
+        grid-area: block;
+        display:grid;
+        grid-template-columns: 85% 15%;
+        grid-template-rows: auto ;
+        grid-template-areas:
+           "func gen"
+    }
+    .function{
+        width: 210px;
+        grid-area: func;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 60px 60px;
+        border:none;
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #generate{
+        margin-top: 30px;
+        text-align: left;
+        grid-area: gen;
+        cursor: pointer;
+    }
+    .variants{    
+        grid-area: var;
+        margin: 0 auto;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "first"
+            "second"
+            "center"
+    
+    }
+    .variant{
+        width: 250px;
+    }
+    .second-col{
+        margin-top: -30px;
+    }
+    #res{
+        width: 80%;
+        height: 50%;
+        border: 15px solid #6C32BF;
+        border-radius: 40px 40px;
+    }
+    table{
+        margin: 0 auto;
+    }
+    #res h1{
+        text-align: center;
+        font-size: 40px;
+        color: #6C32BF;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 50px;
+    }
+    .result>p{
+        color: white;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 30px;
+        background-color: #6C32BF;
+        border-radius: 20px 20px;
+        width: 120px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .answer{
+        font-size: 20px;
+    }
+    th, td{
+        padding: 10px;
+    }
+    
+}
 .container{
     display:grid;
     grid-template-columns: 100%;
@@ -27,7 +295,6 @@ html{
 }
 button{
     padding: 15px;
-    font-size:xx-large;
     color: white;
     border-radius: 60px 60px;
     background-color: #6C32BF;
@@ -56,20 +323,7 @@ button{
        "var"
        "check"
 }
-.block{
-    grid-area: block;
-    display:grid;
-    grid-template-columns: 64% auto;
-    grid-template-rows: auto ;
-    grid-template-areas:
-       "func gen"
-}
-#generate{
-    margin-top: 30px;
-    text-align: left;
-    grid-area: gen;
-    cursor: pointer;
-}
+
 .exercise{
     grid-area: ex;
     background-color: white;
@@ -84,31 +338,8 @@ button{
     text-align: center;
     margin-bottom: 50px;
 }
-.function{
-    grid-area: func;
-    background-color: white;
-    color: rgb(0, 0, 0);
-    border-radius: 60px 60px;
-    border:none;
-    font-size: x-large;
-    padding: 10px;
-    text-align: center;
-    width: 500px;
-    margin-left: auto;
-    height: 70px;
-    margin-right: 30px;
-}
-.variants{    
-    grid-area: var;
-    margin: 0 auto;
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "first second"
-        "center center"
 
-}
+
 .first-col{
     grid-area: first;
 }
@@ -117,7 +348,6 @@ button{
 }
 .variant{   
     cursor: pointer;
-    width: 300px;
     padding: 5px;
     margin: 30px;
     font-size: x-large;
@@ -146,20 +376,13 @@ button{
     border: 5px solid #6C32BF;
 }
 
-
 .check{
     margin-top: 50px;
     grid-area: check;
     margin: 0 auto;
     margin-bottom: 40px;
 }
-#res{
-    width: 50%;
-    height: 70%;
-    border: 15px solid #6C32BF;
-    background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
-    border-radius: 40px 40px;
-}
+
 #res{
     transition: display 0.2s allow-discrete, overlay 0.2s allow-discrete;
   
@@ -192,42 +415,18 @@ body:has(dialog[open]) {
 #res::backdrop {
     background-color: rgb(0 0 0 / 60%);
 }
-#res h1{
-    text-align: center;
-    font-size: 50px;
-    color: white;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 50px;
-}
-.result>p{
-    color: white;
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size: 45px;
-    background-color: #6C32BF;
-    border-radius: 20px 20px;
-    width: 120px;
-    text-align: center;
-    margin: 0 auto;
-}
+
 .buttons{
     text-align: center;
 }
 .buttons>*{
-    margin: 30px;
     padding: 15px;
 }
 .answer{
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 30px;
-    padding: 20px;
 }
-th, td{
-    padding: 20px;
-    padding-left: 40px;
-}
+
 .incorrect{
     color: rgb(163, 16, 21);
 }
