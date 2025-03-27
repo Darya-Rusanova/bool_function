@@ -26,7 +26,7 @@
         }
         if(input.length==0 && (this.id=="or" || this.id=="and" || this.id=="r_bracket")) return 0;
         if((input.slice(-1)=="V" || input.slice(-1)=="·" || input.slice(-1) == "(") && (this.id=="or" || this.id=="and" || this.id=="r_bracket")) return 0;
-        if(input.slice(-2, -1)=='x' && (this.id.slice(-2, -1) == "x" || this.id == 'l_bracket')) return 0;
+        if(input.slice(-2, -1)=='x' && (this.id.slice(-2, -1) == "x" || this.id == 'l_bracket') || input.slice(-1) == ")" && this.id == "l_bracket") return 0;
         if(this.id=="or") text = " " + text + " ";
         if(this.id.slice(0, 3)=="not"){
              span.innerText = text;
