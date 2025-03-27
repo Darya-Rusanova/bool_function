@@ -320,7 +320,11 @@ html{
     width: 150px;
     margin-top: 20px;
 }
-
+#ex8>.picture, #ex9>.picture, #ex3>.picture, #ex5>.picture{
+    margin-top: 10px;
+    height: 170px;
+    width: 180px;
+}
 .background-image {
     position: fixed;
     top: 50%; /* Центрируем по вертикали */

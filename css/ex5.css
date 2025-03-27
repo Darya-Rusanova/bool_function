@@ -3,6 +3,222 @@ html{
     background-attachment: fixed;
     height: 100%;
 }
+@media (min-width:1000px){
+    #close{
+        width: 60px;
+        height: 60px;
+    }
+    button{
+        font-size:xx-large;
+    }
+    .first, .second{
+        font-size: 25px;
+    }
+    .body{
+        padding: 30px;
+        grid-area: body;
+        margin-top: 30px;
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto 10% ;
+        grid-template-areas:
+           "ex ex"
+           "block block"
+           "out out"
+           "retry check"
+    }
+    .check{
+        grid-area: check;
+        margin-left: 20%;
+    }
+    .retry{
+        width: 500px;
+        grid-area: retry;
+        margin-left: 50%;
+    }
+    .block{
+        margin: 0 auto;
+        margin-bottom: 30px;
+        grid-area: block;
+        display:grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: auto ;
+        grid-template-areas:
+           "func gen"
+    }
+    .function{
+        grid-area: func;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 60px 60px;
+        border:none;
+        font-size: x-large;
+        padding: 10px;
+        text-align: center;
+        width: 500px;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #generate{
+        margin-top: 30px;
+        margin-right: 500px;
+        text-align: left;
+        grid-area: gen;
+        cursor: pointer;
+    }
+    .output {
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        grid-area: out;
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+           "fict sign"
+           "arg arg"
+    }
+    #fictitious{
+        width: 350px;
+        min-height: 150px;
+        height: auto;
+        border: 2px dashed #ccc;
+        border-radius: 35px 35px;
+    }
+    #significant{
+        width: 350px;
+        min-height: 150px;
+        height: auto;
+        border: 2px dashed #ccc;
+        border-radius: 35px 35px;
+    }
+    .arguments{
+        margin: 0 auto;
+        margin-top: 60px;
+        width: 40%;
+        height: 50px;
+        text-align: center;
+        font-size: 30px;
+        grid-area: arg;
+    }
+    #res{
+        width: 35%;
+        text-align: center;
+        font-size: 40px;
+        border: 15px solid #6C32BF;
+        border-radius: 35px 35px;
+    }
+    
+}
+
+@media (width < 1000px){
+    #close{
+        width: 30px;
+        height: 30px;
+    }
+    button{
+        font-size:large;
+    }
+    .first, .second{
+        font-size: 20px;
+    }
+    .body{
+        padding: 30px;
+        grid-area: body;
+        margin-top: 30px;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+           "ex"
+           "block"
+           "out"
+           "retry"
+           "check"
+    }
+    .check{       
+        margin: 0 auto;  
+        margin-top: 20px;
+        grid-area: check;
+    }
+    .retry{
+        margin: 0 auto;
+        grid-area: retry;
+    }
+    .block{
+        margin: 0 auto;
+        margin-bottom: 30px;
+        grid-area: block;
+        display:grid;
+        grid-template-columns: 85% 15%;
+        grid-template-rows: auto ;
+        grid-template-areas:
+           "func gen"
+    }
+    .function{
+        width: 210px;
+        grid-area: func;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 60px 60px;
+        border:none;
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #generate{
+        margin-top: 30px;
+        text-align: left;
+        grid-area: gen;
+        cursor: pointer;
+    }
+    .output {
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        grid-area: out;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+           "fict"
+           "sign"
+           "arg"
+    }
+    #fictitious{
+        width: 100%;
+        min-height: 150px;
+        height: auto;
+        border: 2px dashed #ccc;
+        border-radius: 35px 35px;
+    }
+    #significant{
+        width: 100%;
+        min-height: 150px;
+        height: auto;
+        border: 2px dashed #ccc;
+        border-radius: 35px 35px;
+    }
+    .arguments{
+        margin: 0 auto;
+        margin-top: 60px;
+        height: auto;
+        text-align: center;
+        font-size: 25px;
+        grid-area: arg;
+    }
+    #res{
+        width: 60%;
+        text-align: center;
+        font-size: 20px;
+        border: 15px solid #6C32BF;
+        border-radius: 35px 35px;
+    }
+    
+}
 .container{
     display:grid;
     grid-template-columns: 100%;
@@ -27,7 +243,6 @@ html{
 }
 button{
     padding: 15px;
-    font-size:xx-large;
     color: white;
     border-radius: 60px 60px;
     background-color: #6C32BF;
@@ -43,36 +258,7 @@ button{
     margin: 20px;
     text-align: right;
 }
-.body{
-    padding: 30px;
-    grid-area: body;
-    margin-top: 30px;
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto auto 10% ;
-    grid-template-areas:
-       "ex ex"
-       "block block"
-       "out out"
-       "retry check"
-}
-.block{
-    margin: 0 auto;
-    margin-bottom: 30px;
-    grid-area: block;
-    display:grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: auto ;
-    grid-template-areas:
-       "func gen"
-}
-#generate{
-    margin-top: 30px;
-    margin-right: 500px;
-    text-align: left;
-    grid-area: gen;
-    cursor: pointer;
-}
+
 .exercise{
     grid-area: ex;
     background-color: white;
@@ -87,41 +273,7 @@ button{
     text-align: center;
     margin-bottom: 50px;
 }
-.function{
-    grid-area: func;
-    background-color: white;
-    color: rgb(0, 0, 0);
-    border-radius: 60px 60px;
-    border:none;
-    font-size: x-large;
-    padding: 10px;
-    text-align: center;
-    width: 500px;
-    margin-left: auto;
-    margin-right: 30px;
-}
 
-.output {
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    grid-area: out;
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-       "fict sign"
-       "arg arg"
-}
-.arguments{
-    margin: 0 auto;
-    margin-top: 60px;
-    width: 40%;
-    height: 50px;
-    text-align: center;
-    font-size: 30px;
-    grid-area: arg;
-}
 .area{
     padding-top: 30px;
 }
@@ -137,7 +289,6 @@ button{
 
 .first{
     text-align: center;
-    font-size: 25px;
     grid-area: fict;    
     margin: 30px;
     border: 10px solid #6C32BF;
@@ -150,7 +301,6 @@ button{
 }
 .second{
     text-align: center;
-    font-size: 25px;
     grid-area: sign;    
     margin: 30px; 
     border: 10px solid #6C32BF;
@@ -158,36 +308,8 @@ button{
     border-radius: 35px 35px;
     padding: 20px;
 }
-#fictitious{
-    width: 350px;
-    min-height: 150px;
-    height: auto;
-    border: 2px dashed #ccc;
-    border-radius: 35px 35px;
-}
-#significant{
-    width: 350px;
-    min-height: 150px;
-    height: auto;
-    border: 2px dashed #ccc;
-    border-radius: 35px 35px;
-}
-.check{
-    grid-area: check;
-    margin-left: 20%;
-}
-.retry{
-    width: 500px;
-    grid-area: retry;
-    margin-left: 50%;
-}
-#res{
-    width: 35%;
-    text-align: center;
-    font-size: 40px;
-    border: 15px solid #6C32BF;
-    border-radius: 35px 35px;
-}
+
+
 #res{
     transition: display 0.2s allow-discrete, overlay 0.2s allow-discrete;
   

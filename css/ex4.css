@@ -4,8 +4,61 @@ html{
     height: 100%;
 }
 @media (min-width:1000px){
+    .output{
+        margin: 20px;
+        text-align: center;
+        padding: 25px;
+        display:grid;
+        grid-template-columns: 20% 40% 40%;
+        grid-template-rows: 100%;
+        grid-template-areas:
+           "f ans right-ans"
+    }
+    .func{    
+        font-size: 30px;
+        grid-area: f; 
+    }
+    .func>p{
+        margin-bottom: 10px;
+        height: 60px;
+    }
+    .answer{ 
+        font-size: 30px;
+        grid-area: ans;
+    }
+    .answer>p{
+        margin-bottom: 10px;
+        height: 60px;
+    }
+    .right-ans{
+        font-size: 30px;
+        grid-area:right-ans;
+    }
+    .right-ans>p{
+        margin-bottom: 10px;
+        height: 60px;
+    }
+    .nav{
+        font-size: 35px;
+        font-weight: bold;
+    }
+    .head>h1{
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+        margin-left: 25%;
+    }
+    .buttons button{
+        font-size: xx-large;
+    }
+    #start,#res,#ans{
+        background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
+    }
     #start{
-        width: 50%;
+        width: 55%;
         height: 55%;
     }
     #res{
@@ -17,6 +70,48 @@ html{
         padding-top: 20px;
         height: 80%;
         width: 60%;
+    }
+    #start h1,#res h1{
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+    }
+    .result>p{
+        color: white;
+        padding: 15px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 55px;
+        background-color: #6C32BF;
+        border-radius: 30px 30px;
+    }
+    .result>*{ 
+        margin-top: 50px;
+        display: inline;
+        text-align: center;
+        margin-left: 50px;
+    }
+    .result>button{
+        width: 300px;
+        font-size: 30px;
+        border: 15px solid #6C32BF;
+        border-radius: 30px 30px;
+        background-color: white;
+        color: black;
+    }
+    dialog > p{
+        text-align: center;
+        font-size: 35px;
+    }
+    .rounds> button{
+        padding: 10px;
+        margin: 20px;
+        border-radius: 20px 20px;
+        font-size: 50px;
+        width: 85px;
     }
     .exercise{
         width: 50%;
@@ -44,10 +139,108 @@ html{
         text-align: center;
     }
 }
+
 @media (width < 1000px){
-    #start,#res,#ans{
-        width: 90%;
-        height: 90%;
+    .output{
+        text-align: center;
+        display:grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+           "f ans"
+           "right-ans right-ans"
+    }
+    .func{    
+        font-size: 24px;
+        grid-area: f; 
+    }
+    .func>p{
+        margin-bottom: 10px;
+        height: 60px;
+    }
+    .answer{ 
+        font-size: 20px;
+        grid-area: ans;
+    }
+    .answer>p{
+        margin-bottom: 10px;
+        height: 60px;
+    }
+    .right-ans{
+        font-size: 20px;
+        grid-area:right-ans;
+    }
+    .right-ans>p{
+        margin-bottom: 10px;
+        height: 60px;
+    }
+    .nav{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .head>h1{
+        text-align: center;
+        font-size: 40px;
+        color: #6C32BF;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+        margin-left: 25%;
+    }
+    #exit{
+        margin-top: 20px;
+    }
+    #start{
+        width: 80%;
+        height: 65%;
+    }
+    #res,#ans{
+        width: 80%;
+        height: 80%;
+    }
+    #start h1,#res h1{
+        text-align: center;
+        font-size: 40px;
+        color: #6C32BF;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+    }
+    .result>p{
+        color: white;
+        padding: 15px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 30px;
+        background-color: #6C32BF;
+        border-radius: 30px 30px;
+    }
+    .result>*{ 
+        margin-top: 50px;
+        display: inline;
+        text-align: center;
+    }
+    .result>button{
+        width: 70%;
+        font-size: 20px;
+        border: 15px solid #6C32BF;
+        border-radius: 30px 30px;
+        background-color: white;
+        color: black;
+    }
+    dialog > p{
+        text-align: center;
+        font-size: 30px;
+    }
+    .rounds> button{
+        padding: 10px;
+        margin: 20px;
+        border-radius: 20px 20px;
+        font-size: 40px;
+        width: 65px;
+    }
+    .buttons button{
+        font-size: large;
     }
     .variants{
         grid-area: var;
@@ -76,6 +269,46 @@ html{
         width: 80%;
     }
 }
+#start::-webkit-scrollbar {
+    width: 15px;
+}
+  
+#start::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: white;
+}
+#start::-webkit-scrollbar-button:increment:increment {
+    height: 10%;
+    display: block;
+    background: transparent;
+}
+#res::-webkit-scrollbar {
+    width: 15px;
+}
+  
+#res::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: white;
+}
+#res::-webkit-scrollbar-button:increment:increment {
+    height: 10%;
+    display: block;
+    background: transparent;
+}
+
+#ans::-webkit-scrollbar {
+    width: 15px;
+}
+#ans::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: white;
+}
+#ans::-webkit-scrollbar-button:increment:increment {
+    height: 10%;
+    display: block;
+    background: transparent;
+}
+
 .container{
     display:grid;
     grid-template-columns: 100%;
@@ -132,7 +365,7 @@ html{
 }
 button{
     padding: 13px;
-    font-size:xx-large;
+    font-size: xx-large;
     color: white;
     border-radius: 60px 60px;
     background-color: #6C32BF;
@@ -181,7 +414,6 @@ button{
 }
 #start,#res,#ans{
     border: 15px solid #6C32BF;
-    background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
     border-radius: 40px 40px;
 }
 #start,#res,#ans{
@@ -214,69 +446,23 @@ button{
 .result{
     text-align: center;
 }
-.result>p{
-    color: white;
-    padding: 15px;
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size: 55px;
-    background-color: #6C32BF;
-    border-radius: 30px 30px;
-}
-.result>*{ 
-    margin-top: 50px;
-    display: inline;
-    text-align: center;
-    margin-left: 50px;
-}
-.result>button{
-    width: 300px;
-    font-size: 30px;
-    border: 15px solid #6C32BF;
-    border-radius: 30px 30px;
-    background-color: white;
-    color: black;
-}
+
 body:has(dialog[open]) {
     overflow: hidden;
 }
 #start::backdrop, #res::backdrop {
     background-color: rgb(0 0 0 / 60%);
 }
-#start h1,#res h1{
-    text-align: center;
-    font-size: 50px;
-    color: white;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 40px;
-}
-dialog > p{
-    text-align: center;
-    font-size: 40px;
-}
+
+
 .rounds{
     text-align: center;
 }
-.rounds> button{
-    padding: 10px;
-    margin: 20px;
-    border-radius: 20px 20px;
-    font-size: 50px;
-    width: 85px;
-}
+
 .head>*{
     display: inline;
 }
-.head>h1{
-    text-align: center;
-    font-size: 50px;
-    color: white;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 40px;
-    margin-left: 25%;
-}
+
 .head{
     margin-top: -20px;
 }
@@ -341,44 +527,8 @@ dialog > p{
     margin: 30px;
     padding: 15px;
 }
-.output{
-    margin: 20px;
-    text-align: center;
-    padding: 25px;
-    display:grid;
-    grid-template-columns: 20% 40% 40%;
-    grid-template-rows: 100%;
-    grid-template-areas:
-       "f ans right-ans"
-}
-.func{    
-    font-size: 30px;
-    grid-area: f; 
-}
-.func>p{
-    margin-bottom: 10px;
-    height: 60px;
-}
-.answer{ 
-    font-size: 30px;
-    grid-area: ans;
-}
-.answer>p{
-    margin-bottom: 10px;
-    height: 60px;
-}
-.right-ans{
-    font-size: 30px;
-    grid-area:right-ans;
-}
-.right-ans>p{
-    margin-bottom: 10px;
-    height: 60px;
-}
-.nav{
-    font-size: 35px;
-    font-weight: bold;
-}
+
+
 .num>*{
     display: inline;
 }
