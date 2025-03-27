@@ -3,6 +3,296 @@ html{
     background-attachment: fixed;
     height: 100%;
 }
+@media (min-width:1200px){
+    .class{
+        grid-area: class;
+        margin: 0 auto;
+        border: 5px solid #6C32BF;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 30px 30px;
+        font-size: x-large;
+        padding: 10px;
+        width: 50%;
+    }
+    .answer{
+        margin: 40px;
+        width: 30%;
+    }
+    .buttons>*{
+        margin: 30px;
+        padding: 15px;
+    }
+    .slide{
+        margin-top: 45px;
+        width: 300px;
+    }
+    #start, #res, #answers{
+        width: 50%;
+        height: 55%;
+        border: 15px solid #6C32BF;
+        background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
+        border-radius: 40px 40px;
+    }
+    #res, #answers{
+        padding-top: 20px;
+        height: 75%;
+    }
+    #res h1, #start h1{
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+    }
+    .head>h1{
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+        margin-left: 25%;
+    }
+    .name{
+        width: 400px;
+        font-size: 30px;
+    }
+    .set-function>*, .set-argument>*{
+        display: inline-block;
+    } 
+    .set-function>p, .set-argument>p{
+        margin-left: 40px;
+    }
+    .func{
+        grid-area: f;
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+           "first second"
+           "cent cent"
+    }
+    .functions{
+        grid-area: func; 
+        margin: 0 auto;
+        display:grid;
+        grid-template-columns: 90% 10%;
+        grid-template-rows: auto;
+        grid-template-areas:
+           "f gen"
+    }
+    #gen{
+        margin-top: 30px;
+    }
+    .first-col > p, .second-col>p, .center>p{
+        font-size: x-large;
+        width: 300px;
+        margin: 40px;
+    }
+    .exercise{
+        font-size:25px;
+    }
+    .result>*{ 
+        margin-top: 50px;
+        display: inline;
+        text-align: center;
+        margin-left: 50px;
+    }
+    .result>p{
+        color: white;
+        padding: 15px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 40px;
+        border-radius: 30px 30px;
+    }
+    
+    .result>button{
+        width: 300px;
+        font-size: 30px;
+        border: 15px solid #6C32BF;
+        border-radius: 30px 30px;
+        background-color: white;
+        color: black;
+    }
+    th, td{
+        padding: 20px;
+        padding-left: 40px;
+    }
+    .table, .notif{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+        padding: 20px;
+    }
+    .notif{
+        padding: 20px;
+        padding-left: 60px; 
+        padding-top: 30px;
+    }
+    
+}
+
+@media (width < 1200px){
+    .result>p{
+        color: white;
+        padding: 15px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 30px;
+        border-radius: 30px 30px;
+    }
+    
+    .result>button{
+        width: 300px;
+        font-size: 25px;
+        border: 15px solid #6C32BF;
+        border-radius: 30px 30px;
+        background-color: white;
+        color: black;
+    }
+    .result>*{ 
+        margin-top: 50px;
+        display: inline;
+        text-align: center;
+    }
+    #res > .buttons {
+        margin-top: 60px;
+    }
+    .exercise{
+        font-size:20px;
+    }
+    .class{
+        grid-area: class;
+        margin: 0 auto;
+        border: 5px solid #6C32BF;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 30px 30px;
+        font-size: 20px;
+        padding: 10px;
+        width: 90%;
+    }
+    .answer{
+        margin: 0;
+        width: 90%;
+    }
+    .answer>*{
+        margin: 0;
+        font-size: 20px;
+    }
+    .buttons *{
+        font-size: 25px;
+        margin: 30px;
+        padding: 15px;
+    }
+    #start>.buttons .main{
+        margin-top: 70px;
+    }
+    .slide{
+        width: 90%;
+    }
+    #start, #res, #answers{
+        width: 80%;
+        height: 80%;
+        border: 15px solid #6C32BF;
+        border-radius: 40px 40px;
+    } 
+    #start{
+        height: 70%;
+    }
+    #res h1, #start h1{
+        text-align: center;
+        font-size: 40px;
+        color: #6C32BF;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+    }
+    .head>h1{
+        text-align: center;
+        font-size: 40px;
+        color: #6C32BF;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+        margin-left: 25%;
+    }
+    .name{
+        width: 90%;
+        font-size: 25px;
+    }
+    .set-function>input{
+        margin-top: 0px;
+        margin-left: 5%;
+    } 
+    .set-argument>input{
+        margin-top: 0px;
+        margin-left: 5%;
+    } 
+    .set-argument>p{
+        margin-top: 70px;
+    } 
+    .set-function>p, .set-argument>p{
+        text-align: center;
+    }
+    .functions{
+        grid-area: func; 
+        margin: 0 auto;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+           "gen"
+           "f"
+    }
+    #gen{
+        margin: 0 auto;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .first-col > p, .second-col>p, .center>p{
+        font-size: 20px;
+        width: 220px;
+        margin: 40px;
+    }
+    .func{
+        grid-area: f;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+           "first"
+           "second"
+           "cent"
+    }
+    .second-col{
+        margin-top: -40px;
+    }
+    .answer{
+        font-size: 20px;
+    }
+    th, td{
+        padding: 10px;
+    }
+    .table{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    .notif{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        padding: 20px;
+    }
+    .notif{
+        padding: 20px;
+        padding-top: 30px;
+    }
+}
 .container{
     display:grid;
     grid-template-columns: 100%;
@@ -34,12 +324,10 @@ button{
     border: none; 
     cursor: pointer;
 }
-#generate{
-    margin-top: 30px;
-    grid-area: gen;
-}
+
 #gen{
     cursor: pointer;
+    grid-area: gen;
 }
 .icon{
     grid-area: icon;
@@ -87,11 +375,9 @@ button{
     font-size: x-large;
     padding: 10px;
     height: 50px;
-    width: 30%;
     margin-bottom: 40px;
 }
 .answer>*{
-    margin: 40px;
     display: inline;
     text-align: center;
 }
@@ -102,17 +388,7 @@ button{
     width: 20px;
     height: 20px;
 }
-.class{
-    grid-area: class;
-    margin: 0 auto;
-    border: 5px solid #6C32BF;
-    background-color: white;
-    color: rgb(0, 0, 0);
-    border-radius: 30px 30px;
-    font-size: x-large;
-    padding: 10px;
-    width: 50%;
-}
+
 
 @keyframes show {
     0% {opacity: 0;}
@@ -132,41 +408,21 @@ button{
     margin: 40px;
     padding: 10px;
     border: 15px solid #6C32BF;
-    font-size:x-large;
     width: 70%;
     height: auto;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 50px;
 }
-.functions{
-    grid-area: func; 
-    margin: 0 auto;
-    display:grid;
-    grid-template-columns: 90% 10%;
-    grid-template-rows: auto;
-    grid-template-areas:
-       "f gen"
-}
-.func{
-    grid-area: f;
-    display:grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-       "first second"
-       "cent cent"
-}
+
 .first-col > p, .second-col>p, .center>p{
-    margin: 40px;
+
     background-color: white;
     color: rgb(0, 0, 0);
     border-radius: 60px 60px;
     border:none;
-    font-size: x-large;
     padding: 10px;
     text-align: center;
-    width: 300px;
 }
 .full-or-not>*{
     display: inline;
@@ -196,13 +452,12 @@ button{
     margin-top: 30px;
 }
 
-
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
+}
   
   /* Hide default HTML checkbox */
   .switch input {
@@ -260,13 +515,7 @@ button{
     border-radius: 50%;
 }
 
-#start, #res, #answers{
-    width: 50%;
-    height: 55%;
-    border: 15px solid #6C32BF;
-    background: linear-gradient(to bottom, #6C32BF 18%, white 18%);
-    border-radius: 40px 40px;
-}
+
 #start,#res,#answers{
     transition: display 0.2s allow-discrete, overlay 0.2s allow-discrete;
   
@@ -293,62 +542,23 @@ button{
       opacity: 0;
     }
 }
-#res, #answers{
-    padding-top: 20px;
-    height: 75%;
-}
+
 
 .result{
     text-align: center;
 }
-.result>p{
-    color: white;
-    padding: 15px;
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size: 40px;
-    border-radius: 30px 30px;
-}
-.result>*{ 
-    margin-top: 50px;
-    display: inline;
-    text-align: center;
-    margin-left: 50px;
-}
-.result>button{
-    width: 300px;
-    font-size: 30px;
-    border: 15px solid #6C32BF;
-    border-radius: 30px 30px;
-    background-color: white;
-    color: black;
-}
+
 body:has(dialog[open]) {
     overflow: hidden;
 }
 #start::backdrop, #res::backdrop {
     background-color: rgb(0 0 0 / 60%);
 }
-#res h1, #start h1{
-    text-align: center;
-    font-size: 50px;
-    color: white;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 40px;
-}
+
 .head>*{
     display: inline;
 }
-.head>h1{
-    text-align: center;
-    font-size: 50px;
-    color: white;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 40px;
-    margin-left: 25%;
-}
+
 .head{
     margin-top: -20px;
     margin-bottom: 40px;
@@ -356,24 +566,15 @@ body:has(dialog[open]) {
 #exit{
     cursor: pointer;
 }
-dialog > p{
-    text-align: center;
-    font-size: 40px;
-}
-.set-function>*, .set-argument>*{
-    display: inline-block;
-} 
-.set-function>p, .set-argument>p{
-    margin-left: 40px;
-}
+
+
+
 .setting{
     margin-top: 20px;
     margin-bottom: 30px;
 }
 .slide {
     -webkit-appearance: none;
-    margin-top: 45px;
-    width: 300px;
     height: 20px;
     position: absolute;
     background: #ccc;
@@ -403,7 +604,6 @@ dialog > p{
     border-radius: 10px 10px;
     background: #6C32BF;
     cursor: pointer;
-
     pointer-events: all;
     position: relative;
     z-index: 1;
@@ -416,36 +616,16 @@ dialog > p{
     border-radius: 30px 30px;
     background: #6C32BF;
     cursor: pointer;
-
     pointer-events: all;
     position: relative;
 }
-.name{
-    width: 400px;
-    font-size: 30px;
-}
+
 .buttons{
     text-align: center;
 }
-.buttons>*{
-    margin: 30px;
-    padding: 15px;
-}
-.table, .notif{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 30px;
-    padding: 20px;
-}
-.notif{
-    padding: 20px;
-    padding-left: 60px; 
-    padding-top: 30px;
-}
-th, td{
-    padding: 20px;
-    padding-left: 40px;
-}
+
+
+
 
 #answers>p{
     text-align: left;

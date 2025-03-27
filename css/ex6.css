@@ -3,6 +3,288 @@ html{
     background-attachment: fixed;
     height: 100%;
 }
+@media (min-width:1200px){
+    #close{
+        margin-top: -30px;
+        width: 60px;
+        height: 60px;
+    }
+    button{
+        font-size:xx-large;
+    }
+    .body{
+        padding: 30px;
+        grid-area: body;
+        margin-top: 30px;
+        display:grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: auto auto auto 10% ;
+        grid-template-areas:
+           "ex ex"
+           "block block"
+           "in calc"
+           "retry check"
+    }
+    .check{
+        grid-area: check;
+        margin-left: 20%;
+    }
+    .retry{
+        width: 500px;
+        grid-area: retry;
+        margin-left: 40%;
+    }
+    .block{
+        margin: 0 auto;
+        margin-bottom: 30px;
+        grid-area: block;
+        display:grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: auto ;
+        grid-template-areas:
+           "func gen"
+    }
+    .function{
+        grid-area: func;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 60px 60px;
+        border:none;
+        font-size: x-large;
+        padding: 10px;
+        text-align: center;
+        width: 500px;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #generate{
+        margin-top: 30px;
+        margin-right: 500px;
+        text-align: left;
+        grid-area: gen;
+        cursor: pointer;
+    }
+    .calc>*{
+        height: 80px;
+        font-size: 30px;
+    }
+    
+    #res{
+        width: 35%;
+        text-align: center;
+        font-size: 40px;
+        border: 15px solid #6C32BF;
+        border-radius: 35px 35px;
+    }
+    .calc{
+        margin: 0 auto;
+        padding: 10px;
+        grid-area: calc;
+        border-radius: 20px 20px;
+        width: 100%;
+        height: auto;
+        display:grid;
+        grid-template-columns: 16% 16% 16% 16% 16% 16%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+           "x1 x2 x3 l r and"
+           "notx1 notx2 notx3 or del del"
+    }
+    #del>*{
+        margin-bottom: 10px;
+    }
+    
+}
+
+@media (550px<width < 1200px){
+    #close{
+        width: 45px;
+        height: 45px;
+    }
+    button{
+        font-size:large;
+    }
+    .body{
+        padding: 30px;
+        grid-area: body;
+        margin-top: 30px;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-areas:
+           "ex"
+           "block"
+           "in"
+           "calc"
+           "check"
+           "retry"
+    }
+    .check{       
+        margin: 0 auto; 
+        margin-bottom: 30px;
+        margin-top: 20px;
+        grid-area: check;
+    }
+    .retry{
+        margin: 0 auto;
+        grid-area: retry;
+    }
+    .block{
+        margin: 0 auto;
+        margin-bottom: 30px;
+        grid-area: block;
+        display:grid;
+        grid-template-columns: 85% 15%;
+        grid-template-rows: auto ;
+        grid-template-areas:
+           "func gen"
+    }
+    .function{
+        width: 210px;
+        grid-area: func;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 60px 60px;
+        border:none;
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #generate{
+        margin-top: 30px;
+        text-align: left;
+        grid-area: gen;
+        cursor: pointer;
+    }
+
+    .calc>*{
+        height: auto;
+        font-size: 30px;
+    }
+    
+    #res{
+        width: 60%;
+        text-align: center;
+        font-size: 20px;
+        border: 15px solid #6C32BF;
+        border-radius: 35px 35px;
+    }
+    .calc{
+        margin: 0 auto;
+        padding: 10px;
+        grid-area: calc;
+        border-radius: 20px 20px;
+        width: 100%;
+        height: auto;
+        display:grid;
+        grid-template-columns: 16% 16% 16% 16% 16% 16%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+           "x1 x2 x3 l r and"
+           "notx1 notx2 notx3 or del del"
+    }
+    #del>*{
+        margin-bottom: 10px;
+    }
+    
+}
+@media (width < 550px){
+    #close{
+        width: 45px;
+        height: 45px;
+    }
+    button{
+        font-size:large;
+    }
+    .body{
+        padding: 30px;
+        grid-area: body;
+        margin-top: 30px;
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-areas:
+           "ex"
+           "block"
+           "in"
+           "calc"
+           "check"
+           "retry"
+    }
+    .check{       
+        margin: 0 auto;  
+        margin-bottom: 30px;
+        grid-area: check;
+    }
+    .retry{
+        margin: 0 auto;
+        grid-area: retry;
+    }
+    .block{
+        margin: 0 auto;
+        margin-bottom: 30px;
+        grid-area: block;
+        display:grid;
+        grid-template-columns: 85% 15%;
+        grid-template-rows: auto ;
+        grid-template-areas:
+           "func gen"
+    }
+    .function{
+        width: 210px;
+        grid-area: func;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border-radius: 60px 60px;
+        border:none;
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #generate{
+        margin-top: 30px;
+        text-align: left;
+        grid-area: gen;
+        cursor: pointer;
+    }
+
+    .calc>*{
+        height: auto;
+        font-size: 30px;
+    }
+    
+    #res{
+        width: 60%;
+        text-align: center;
+        font-size: 20px;
+        border: 15px solid #6C32BF;
+        border-radius: 35px 35px;
+    }
+    .calc{
+        margin: 0 auto;
+        padding: 10px;
+        grid-area: calc;
+        border-radius: 20px 20px;
+        width: 100%;
+        height: auto;
+        display:grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 20% 20% 20% 20%;
+        grid-template-areas:
+           "x1 x2 x3"
+           "notx1 notx2 notx3"
+           "l r and"
+            "or del del"
+    }
+    #del>*{
+        margin-bottom: 60px;
+    }
+    
+}
 .container{
     display:grid;
     grid-template-columns: 100%;
@@ -28,7 +310,6 @@ html{
 }
 button{
     padding: 15px;
-    font-size:xx-large;
     color: white;
     border-radius: 60px 60px;
     background-color: #6C32BF;
@@ -44,34 +325,8 @@ button{
     grid-area: info;
     text-align: right;
 }
-.body{
-    padding: 30px;
-    grid-area: body;
-    margin-top: 30px;
-    display:grid;
-    grid-template-columns: 60% 40%;
-    grid-template-rows: auto auto auto 10% ;
-    grid-template-areas:
-       "ex ex"
-       "block block"
-       "in calc"
-       "retry check"
-}
-.calc{
-    padding: 10px;
-    grid-area: calc;
-    border-radius: 20px 20px;
-    width: 80%;
-    padding-left: 7%;
-    padding-top: 5%;
-    height: auto;
-    display:grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    grid-template-rows: 50% 50%;
-    grid-template-areas:
-       "x1 x2 x3 l r and"
-       "notx1 notx2 notx3 or del del"
-}
+
+
 #x1{
     grid-area: x1;
 }
@@ -103,17 +358,14 @@ button{
     grid-area: l;
 }
 #del{
-    width: 175px;
+    width: auto;
     grid-area: del;
 }
-#del>*{
-    margin-bottom: 10px;
-}
+
 .calc>*{
     text-align: center;
     margin: 5px;
-    width: 80px;
-    height: 80px;
+    width: auto;
     color: black;
     background-color: white;
     border: 5px solid #6C32BF;
@@ -123,23 +375,7 @@ button{
     text-decoration: overline;
     display: inline-block;
 }
-.block{
-    margin: 0 auto;
-    margin-bottom: 30px;
-    grid-area: block;
-    display:grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: auto ;
-    grid-template-areas:
-       "func gen"
-}
-#generate{
-    margin-top: 30px;
-    margin-right: 500px;
-    text-align: left;
-    grid-area: gen;
-    cursor: pointer;
-}
+
 .exercise{
     grid-area: ex;
     background-color: white;
@@ -154,20 +390,9 @@ button{
     text-align: center;
     margin-bottom: 50px;
 }
-.function{
-    grid-area: func;
-    background-color: white;
-    color: rgb(0, 0, 0);
-    border-radius: 60px 60px;
-    border:none;
-    font-size: x-large;
-    padding: 10px;
-    text-align: center;
-    width: 500px;
-    margin-left: auto;
-    margin-right: 30px;
-}
+
 #input{
+    margin: 0 auto;
     color: rgb(0, 0, 0);
     padding-top: 25px;
     border-radius: 40px 40px;
@@ -176,37 +401,18 @@ button{
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 80%;
+    width: 90%;
     height: auto;
     min-height: 100px;
     background-color: white;
 }
 
 .input{
+    margin: 0 auto;
     grid-area: in;
-    margin-left: 10%;
     width: 100%;
 }
-.check{
-    margin-top: 30px;
-    grid-area: check;
-    margin-left: 20%;
-    margin-bottom: 10px;
-}
-.retry{
-    margin-top: 30px;
-    margin-bottom: 10px;
-    width: 500px;
-    grid-area: retry;
-    margin-left: 27%;
-}
-#res{
-    width: 35%;
-    text-align: center;
-    font-size: 40px;
-    border: 15px solid #6C32BF;
-    border-radius: 35px 35px;
-}
+
 #res{
     transition: display 0.2s allow-discrete, overlay 0.2s allow-discrete;
   
@@ -244,10 +450,9 @@ body:has(dialog[open]) {
     height: auto;
 }
 #close{
-    margin-top: -30px;
     grid-area: close;
     cursor: pointer;
-    margin-left: 90%;
+    margin-left: 85%;
 }
 
 

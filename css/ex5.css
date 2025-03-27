@@ -5,6 +5,7 @@ html{
 }
 @media (min-width:1000px){
     #close{
+        margin-top: -30px;
         width: 60px;
         height: 60px;
     }
@@ -113,8 +114,8 @@ html{
 
 @media (width < 1000px){
     #close{
-        width: 30px;
-        height: 30px;
+        width: 45px;
+        height: 45px;
     }
     button{
         font-size:large;
@@ -347,8 +348,7 @@ body:has(dialog[open]) {
     height: auto;
 }
 #close{
-    margin-top: -30px;
     grid-area: close;
     cursor: pointer;
-    margin-left: 90%;
+    margin-left: 85%;
 }
