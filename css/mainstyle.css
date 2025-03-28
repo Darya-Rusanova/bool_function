@@ -120,3 +120,7 @@ button:disabled,
 button[disabled]{
     background-color: darkgray;
 }
+.over{
+    text-decoration: overline;
+    display: inline-block;
+}

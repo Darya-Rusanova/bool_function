@@ -38,7 +38,7 @@
             document.getElementById("test").innerHTML=1;
         }else if (es.length==1 && es[0]=='0')
         {
-            document.getElementById("test").innerHTML=0;
+            document.getElementById("test").innerHTML="Не существует";
         }else
         {
             let vec=[];
@@ -84,9 +84,47 @@
                 newSet = new Set(t); 
                 t = Array.from(newSet);
                 t.sort();
-                // console.log(m,t,r);
+                //console.log(m,t,r);
             }
-            // console.log(t);
+            for(let i=0;i<t.length;i++)
+            {
+                //console.log(t[i]);
+                for(let j=i+1;j<t.length;j++)
+                {
+                    //console.log(t[i],t[j],t);
+                    let r="",a=1;
+                    find0:
+                    {
+                        for (let k=0;k<t[i].length;k++)
+                            {
+                                if(t[i][k]!=t[j][k])
+                                {
+                                    if(t[i][k]=='2') r+=t[j][k];
+                                    else if(t[j][k]=='2') r+=t[i][k];
+                                    else {r+="2";a--;}
+                                    if(a<0)break find0;
+                                }else r+=t[i][k];
+                            }
+                            //console.log(r);
+                        et = new Set(r); 
+                        y = Array.from(et);
+                        if(y.length!=1 || y[0]!='2')
+                        {
+                            for (let k=0;k<t.length;k++)
+                            {
+                                //console.log(t,t[k][0],t[k][1],t[k][2]);
+                                find:{
+                                    for (let z=0;z<t[k].length;z++)
+                                        if(r[z]!=t[k][z] && r[z] !="2" || i==k||j==k) break find;
+                                    t.splice(k,1);
+                                }
+        
+                            }
+                        }
+                    }
+                }
+            }
+            //console.log(t);
             let ans="";
             for (let i=0;i<t.length;i++)
             {
@@ -98,8 +136,44 @@
                 ans += v.slice(0,-1)+ " ∨ ";
             }
             document.getElementById("test").innerHTML=ans.slice(0, -3);
+            //generateTable(Math.log2(vector.length),vector);
         }
+        
     }
+
+    function generateTable(n,vector) {
+        let rows, columns;
+        console.log(n);
+    
+        if (n % 2 === 0) {
+            rows = n;
+        } else {
+            rows = n-1;
+        }
+        if (rows==0)rows=1;
+        columns = vector.length/rows;
+        console.log(columns);
+    
+        let tableHTML = '<table><tr><th>i/j</th>';
+            for (let j = 0; j < columns; j++) {
+                tableHTML += "<th>"+dec2bin(j)+"</th>";
+            }
+            tableHTML += '</tr>';
+
+            for (let i = 0; i < rows; i++) {
+                tableHTML += "<tr><th>"+dec2bin(i)+"</td>";
+                for (let j = 0; j < columns; j++) {
+                    tableHTML += "<td>"+vector[i*columns+j]+"</td>"; 
+                }
+                tableHTML += "</tr>";
+            }
+
+            tableHTML += '</table>';
+            document.getElementById('table').innerHTML = tableHTML;
+    
+        console.log(table);
+    }
+    
     function isArraysEqual(firstArray, secondArray) {
         return firstArray.toString() === secondArray.toString();
     }
