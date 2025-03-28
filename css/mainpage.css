@@ -320,10 +320,16 @@ html{
     width: 150px;
     margin-top: 20px;
 }
-#ex8>.picture, #ex9>.picture, #ex3>.picture, #ex5>.picture{
+
+#ex3>.picture, #ex4>.picture, #ex5>.picture{
     margin-top: 10px;
     height: 170px;
     width: 180px;
+}
+#ex8>.picture, #ex9>.picture{
+
+    height: 150px;
+    width: 170px;
 }
 .background-image {
     position: fixed;
