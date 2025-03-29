@@ -4,6 +4,9 @@ html{
     height: 100%;
 }
 @media (min-width:1000px){
+    .exercise{
+        font-size:x-large;
+    }
     #close{
         margin-top: -30px;
         width: 60px;
@@ -113,6 +116,9 @@ html{
 }
 
 @media (width < 1000px){
+    .exercise{
+        font-size: 20px;
+    }
     #close{
         width: 45px;
         height: 45px;
@@ -267,7 +273,6 @@ button{
     margin: 40px;
     padding: 10px;
     border: 15px solid #6C32BF;
-    font-size:x-large;
     width: 70%;
     height: auto;
     margin: 0 auto;

@@ -49,7 +49,7 @@ p{
     margin-top: 50px;
 }
 .button{
-    margin: 20px;
+    margin: 10px;
     grid-area: bt; 
 }
 button{
@@ -106,7 +106,6 @@ input{
 
 .result>button{
     width: auto;
-    margin-top: 20px;
     margin-bottom: 50px;
 }
 
