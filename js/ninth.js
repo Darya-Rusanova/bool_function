@@ -17,13 +17,18 @@
         const message = document.getElementById('message');
         this.value=this.value.replace(/[^0-1]/g,"");
         let length = document.getElementById("in").value.length;
-            if (length > 0 && (length & (length - 1)) === 0) {
-                message.textContent = '';
-                document.getElementById("res").disabled = false; 
-            } else {
-                message.textContent = 'Длина не является степенью двойки';
-                document.getElementById("res").disabled = true; 
-            }
+        
+        if(length == 1){
+            message.textContent = 'Слишком короткий вектор!';
+            document.getElementById("res").disabled = true; 
+        }
+        else if (length > 0 && (length & (length - 1)) === 0) {
+            message.textContent = '';
+            document.getElementById("res").disabled = false; 
+        } else {
+            message.textContent = 'Длина не является степенью двойки';
+            document.getElementById("res").disabled = true; 
+        }
     }
 
     function click() {
