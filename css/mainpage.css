@@ -5,6 +5,13 @@ html{
 } 
 
 @media (min-width:1450px){
+    h3{
+        font-size: 25px;
+        color: rgb(78, 26, 134);
+    }
+    #welcome p{
+        font-size: 20px;
+    }
     .container{
         margin-top: 100px;
     }  
@@ -48,11 +55,18 @@ html{
         width: 90%;
         aspect-ratio: 2/1;
     }
+    h3{
+        font-size: 25px;
+        color: rgb(78, 26, 134);
+    }
+    #welcome p{
+        font-size: 20px;
+    }
     .body {  
         grid-area:body;
         display:grid;
         grid-template-columns: 40% 55%;
-        grid-template-rows: 700px;
+        grid-template-rows: 800px;
         grid-template-areas:
         "info games"
     }
@@ -85,11 +99,18 @@ html{
         width:200px;
         height:100px;
     }
+    h3{
+        font-size: 25px;
+        color: rgb(78, 26, 134);
+    }
+    #welcome p{
+        font-size: 20px;
+    }
     .body {  
         grid-area:body;
         display:grid;
         grid-template-columns: 100%;
-        grid-template-rows: 300px 550px;
+        grid-template-rows: auto 550px;
         grid-template-areas:
         "info"
         "games"
@@ -122,11 +143,18 @@ html{
         width:200px;
         height:100px;
     }
+    h3{
+        font-size: 25px;
+        color: rgb(78, 26, 134);
+    }
+    #welcome p{
+        font-size: 20px;
+    }
     .body {  
         grid-area:body;
         display:grid;
         grid-template-columns: 100%;
-        grid-template-rows: 300px 550px;
+        grid-template-rows: auto 550px;
         grid-template-areas:
         "info"
         "games"
@@ -160,11 +188,18 @@ html{
         width:200px;
         height:100px;
     }
+    h3{
+        font-size: 22px;
+        color: rgb(78, 26, 134);
+    }
+    #welcome p{
+        font-size: 18px;
+    }
     .body {  
         grid-area:body;
         display:grid;
         grid-template-columns: 100%;
-        grid-template-rows: 300px 550px;
+        grid-template-rows: auto 550px;
         grid-template-areas:
         "info"
         "games"
