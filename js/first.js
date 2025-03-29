@@ -12,15 +12,16 @@
     }
     function prove(){
         this.value = this.value.replace(/[^\d]/g, "");
+        if (this.value == '0') this.value='';
         if (this.value=='') document.getElementById("res").disabled = true; 
         else  document.getElementById("res").disabled = false; 
-        if (this.value == '0') this.value='';
         if (this.value > 12) {
             this.value = 12;
         }
     }
 
     function click() {
+        if(document.getElementById("res").disabled == true) return 0;
         var n = document.getElementById("in").value;
         var o = document.getElementById("out");
         var c = ""
