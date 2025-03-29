@@ -32,6 +32,12 @@ html{
     margin: 0 auto;
     text-align: center;
 }
+#message{
+    margin: 10px;
+    text-align: center;
+    color:black;
+    font-size: 20px;
+}
 p{
     margin: 10px;
 }
