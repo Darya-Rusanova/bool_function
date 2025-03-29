@@ -3,6 +3,25 @@ html{
     background-attachment: fixed;
     height: 100%;
 }
+@media (min-width:1000px){
+    .exercise{
+        font-size: x-large;
+    }
+    .info{
+        margin: 20px;
+    }
+    
+}
+
+@media (width < 1000px){
+    .exercise{
+        font-size: 20px;
+    }
+    .info{
+        margin: 10px;
+    }
+    
+}
 .container{
     display:grid;
     grid-template-columns: 100%;
@@ -26,7 +45,6 @@ html{
     margin: 40px;
     padding: 30px;
     border: 15px solid #6C32BF;
-    font-size:x-large;
     width: 70%;
     height: auto;
     margin: 0 auto;
@@ -68,7 +86,6 @@ button{
 .info{
     grid-area: info;
     text-align: right;
-    margin: 20px;
 }
 input{
     color: rgb(0, 0, 0);
